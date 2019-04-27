@@ -19,6 +19,7 @@ SRU mod includes following custom admin commands:
 /f0                       - disable gun fire
 /f1                       - enable gun fire
 /skip                     - set timer to 00:01
+/car [id], [color], [player's name]
 ```
 
 GeoIP requires "luaclient-i386.dll" and "geoip" in the game folder. (see PUBG-mod repository)

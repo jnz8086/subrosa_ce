@@ -441,7 +441,7 @@ mov [esi+subrosadedicated_34c.exe+8EEFA90],ebp
         </CheatEntry>
         <CheatEntry>
           <ID>94</ID>
-          <Description>"motd_wip"</Description>
+          <Description>"motd_wip (motd.txt)"</Description>
           <LastState/>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(round_counter,subrosadedicated_34c.exe+8EC07FC)
@@ -1087,8 +1087,7 @@ unregistersymbol(tmpbuffer_geoip)
           <Description>"make every gun displayed as uzi v2"</Description>
           <LastState/>
           <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>
-//item
+          <AssemblerScript>//item
 define(i0,subrosadedicated_34c.exe+8EEF9A0)
 define(i_body,4)
 define(i_type,C)
@@ -23340,7 +23339,7 @@ push s_timeformat
 push tmpbuffer2
 call msvcrt.sprintf
  add esp,1C
-  call msvcrt.free
+  //call msvcrt.free
   add esp,4
 
 
