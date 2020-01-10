@@ -1,0 +1,4882 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="29">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>4</ID>
+      <Description>"----- conf ----"</Description>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>0</ID>
+          <Description>"max players"</Description>
+          <VariableType>4 Bytes</VariableType>
+          <Address>subrosadedicated_36b.exe+8BBB668</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>47</ID>
+          <Description>"title"</Description>
+          <VariableType>String</VariableType>
+          <Length>32</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>subrosadedicated_36b.exe+8BBB254</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>1</ID>
+          <Description>"game mode"</Description>
+          <VariableType>4 Bytes</VariableType>
+          <Address>subrosadedicated_36b.exe+8F7A248</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>5</ID>
+              <Description>"resetgame override"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+
+subrosadedicated_36b.exe+9213E:
+db 90 90  90 90 90 90
+ 
+[DISABLE]
+
+subrosadedicated_36b.exe+9213E:
+mov [subrosadedicated_36b.exe+8F7A248],ecx
+
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>6</ID>
+          <Description>"world traffic"</Description>
+          <VariableType>4 Bytes</VariableType>
+          <Address>subrosadedicated_36b.exe+9032454</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>50</ID>
+          <Description>"round team damage"</Description>
+          <VariableType>4 Bytes</VariableType>
+          <Address>subrosadedicated_36b.exe+9032450</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>51</ID>
+          <Description>"versus starting (seconds)"</Description>
+          <VariableType>4 Bytes</VariableType>
+          <Address>subrosadedicated_36b.exe+9032494</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>64</ID>
+              <Description>"versus allow respawn"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>subrosadedicated_36b.exe+9032488</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>65</ID>
+              <Description>"versus round time (mins)"</Description>
+              <VariableType>4 Bytes</VariableType>
+              <Address>subrosadedicated_36b.exe+9032490</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>29</ID>
+          <Description>"current map"</Description>
+          <VariableType>String</VariableType>
+          <Length>64</Length>
+          <Unicode>0</Unicode>
+          <CodePage>0</CodePage>
+          <ZeroTerminate>1</ZeroTerminate>
+          <Address>subrosadedicated_36b.exe+8F7A24C</Address>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>30</ID>
+              <Description>"resetgame override"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+
+subrosadedicated_36b.exe+851CE:
+jmp subrosadedicated_36b.exe+8523E
+ 
+[DISABLE]
+
+subrosadedicated_36b.exe+851CE:
+je subrosadedicated_36b.exe+8523E
+
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>17</ID>
+      <Description>"----- status ----"</Description>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>16</ID>
+          <Description>"timer"</Description>
+          <VariableType>4 Bytes</VariableType>
+          <Address>subrosadedicated_36b.exe+8F7A46C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>15</ID>
+          <Description>"game state"</Description>
+          <VariableType>4 Bytes</VariableType>
+          <Address>subrosadedicated_36b.exe+8F7A464</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>18</ID>
+          <Description>"day time"</Description>
+          <VariableType>4 Bytes</VariableType>
+          <Address>subrosadedicated_36b.exe+351EAEA0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>19</ID>
+          <Description>"players on"</Description>
+          <VariableType>4 Bytes</VariableType>
+          <Address>subrosadedicated_36b.exe+8BBB670</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>66</ID>
+      <Description>"----- scripts ----"</Description>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>38</ID>
+          <Description>"5 teams round 1/6"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(pentacom_salary,#3000)
+define(pentacom_fine,#250)
+
+define(reward_mugging,0.05)
+define(reward_arrest,0.20)
+
+define(death_tax_nexaco,0.10) //+0.05
+define(death_tax_pentacom,0.05) //+0.05
+
+//------------------------------------------
+
+define(corp0,subrosadedicated_36b.exe+8F7A54C)
+define(corp_active,0)
+define(corp_spawn,-14)
+define(corp_table,-20)
+define(corp_door,C)
+define(corpsize,5A7C)
+
+define(stocks0,subrosadedicated_36b.exe+2184B42C)
+define(stock_price,4)
+define(stockss,18)
+
+define(p0,subrosadedicated_36b.exe+13AFCE60)
+define(p_name,4)
+define(p_phone,30)
+define(p_cash,4C)
+define(p_crime,54)
+define(p_team,7C)
+define(p_stocks,84)
+define(p_h,90)
+define(p_menu,158)
+define(ps,3824)
+define(players_max,#255)
+
+define(h0,subrosadedicated_36b.exe+5CC3C8)
+define(h_p,8)
+define(h_car,20)
+define(h_seat,24)
+define(h_despawn,30)
+define(h_health,34)
+define(h_spawn_timer,48)
+define(h_pos,78)
+define(h_grab0,338C)
+define(h_progress,3530)
+define(hs,3748)
+define(humans_max,#255)
+
+define(i0,subrosadedicated_36b.exe+90331E0)
+define(i_type,10)
+define(i_despawn,18)
+define(i_contained,24)
+define(i_contains,30)
+define(i_pb,54)
+define(is,250)
+
+define(it0,subrosadedicated_36b.exe+1A0639C0)
+define(it_price,0)
+define(it_name,28)
+define(its,EA4)
+
+define(bt0,subrosadedicated_36b.exe+24F860)
+define(b_type,0)
+define(b_owner_p,8)
+define(b_vel,2C)
+define(bs,5C)
+
+define(pb0,subrosadedicated_36b.exe+9B950)
+define(pb_weight,0)
+define(pb_pos,4)
+define(pb_vel,10)
+define(pb_torque,4C)
+define(pbs,AC)
+
+define(player_sync_func,subrosadedicated_36b.exe+78C0)
+
+define(game_state,subrosadedicated_36b.exe+8F7A464)
+define(game_mode,subrosadedicated_36b.exe+8F7A248)
+define(game_daytime,subrosadedicated_36b.exe+351EAEA0)
+define(game_reset,subrosadedicated_36b.exe+8BBB68C)
+define(current_map,subrosadedicated_36b.exe+8F7A24C)
+
+define(player_create_func,subrosadedicated_36b.exe+34530)
+define(human_spawn_func,subrosadedicated_36b.exe+7CE40)
+               //(float* position, float* rotation, int player_id)
+define(vehicle_spawn_func,subrosadedicated_36b.exe+4E940)
+               //(type, *float[3] position, [*float[3] velocity], *float[9] orientation, color)
+define(arm_func,subrosadedicated_36b.exe+544A0)
+define(msg_func,subrosadedicated_36b.exe+7700)
+
+define(human_remove_func,subrosadedicated_36b.exe+416C0)
+
+define(door_sync_func,subrosadedicated_36b.exe+7AD0)
+
+define(item_uncontain_func,subrosadedicated_36b.exe+A650)
+           //(int ammo, int gun)
+
+define(item_spawn_func,subrosadedicated_36b.exe+49CE0)
+               //(int item_type, float *pos, [float* velocity], float *orientation)
+
+[ENABLE]
+
+
+
+
+
+
+
+//================= custom data =================
+
+alloc(mydata,8192)
+define(map_tweaked,mydata+0)
+define(h20,mydata+4)
+define(h2_p,0)
+define(h2s,8)
+
+//=============== strings =========================
+alloc(tmpbuffer,8192)
+alloc(tmpbuffer2,8192)
+alloc(tmpbuffer3,8192)
+alloc(tmpbuffer4,8192)
+alloc(strings,8192)
+strings:
+
+label(s_format_tag)
+s_format_tag:
+db '[' '%' 's' ']' ' ' '%' 's' 0
+
+label(s_taken)
+s_taken:
+db 'T' 'o' 'o' 'k' ' ' '+' '$' '%' 'i' ' ' 'f' 'r' 'o' 'm' ' ' '%' 's' '.' 0
+label(s_sold)
+s_sold:
+db 'S' 'o' 'l' 'd' ' ' '%' 's' ' ' 'f' 'o' 'r' ' ' '$' '%' 'i' '.' 0
+label(s_fined)
+s_fined:
+db 'F' 'i' 'n' 'e' 'd' ' ' '-' '$' '%' 'i' ' ' 'f' 'o' 'r' ' ' 'l' 'e' 't' 't' 'i' 'n' 'g' ' ' '%' 's' ' ' 'g' 'e' 't' ' ' 'r' 'o' 'b' 'b' 'e' 'd' '.' 0
+label(s_robbed)
+s_robbed:
+db 'Y' 'o' 'u' ' ' 'g' 'o' 't' ' ' '-' '$' '%' 'i' ' ' 't' 'a' 'k' 'e' 'n' ' ' 'a' 'w' 'a' 'y' ' ' 'f' 'r' 'o' 'm' ' ' 'y' 'o' 'u' '.' 0
+
+label(s_corp_names)
+s_corp_names:
+db 'G' 'o' 'l' 'd' 'm' 'e' 'n' 0 ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' '
+db 'M' 'o' 'n' 's' 'o' 't' 'a' 0 ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' '
+db 'O' 'X' 'S' 0 ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' '
+db 'N' 'e' 'x' 'a' 'c' 'o' 0 ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' '
+//db 'N' 'e' 'x' 'a' '-' 'm' 'o' 'b' 0 ' ' ' ' ' ' ' ' ' ' ' ' ' '
+db 'P' 'e' 'n' 't' 'a' 'c' 'o' 'p' 0 ' ' ' ' ' ' ' ' ' ' ' ' ' '
+db 't' 'e' 'a' 'm' ' ' '6' 0 ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' '
+db 'M' 'e' 'g' 'a' 'c' 'o' 'r' 'p' 0 ' ' ' ' ' ' ' ' ' ' ' ' ' '
+db 'C' 'i' 'v' 0 ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' '
+define(s_corp_name_len,#16)
+
+label(s_msg_nexaco_1)
+s_msg_nexaco_1:
+db 'Y' 'o' 'u' ' ' 'a' 'r' 'e' ' ' 'a' ' ' 's' 'o' 'l' 'd' 'i' 'e' 'r' ' ' 'o' 'f' ' ' 't' 'h' 'e' ' ' 'N' 'e' 'x' 'a' 'c' 'o' ' ' 'c' 'r' 'e' 'w' '.' 0
+label(s_msg_nexaco_2)
+s_msg_nexaco_2:
+db 'U' 's' 'e' ' ' 'y' 'o' 'u' 'r' ' ' 'g' 'r' 'a' 'b' ' ' 'm' 'o' 'v' 'e' ' ' 't' 'o' ' ' 'm' 'u' 'g' ' ' 'c' 'a' 's' 'h' ' ' 'o' 'u' 't' ' ' 'o' 'f' ' ' 'G' 'o' 'l' 'd' 'm' 'e' 'n' ',' 0
+label(s_msg_nexaco_3)
+s_msg_nexaco_3:
+db 'M' 'o' 'n' 's' 'o' 't' 'a' ' ' 'a' 'n' 'd' ' ' 'O' 'X' 'S' ' ' 'm' 'e' 'm' 'b' 'e' 'r' 's' '.' 0
+label(s_msg_nexaco_4)
+s_msg_nexaco_4:
+db 'W' 'a' 't' 'c' 'h' ' ' 'o' 'u' 't' ' ' 'f' 'o' 'r' ' ' 'P' 'e' 'n' 't' 'a' 'c' 'o' 'p' 's' ',' ' ' 'w' 'h' 'o' ' ' 'c' 'a' 'n' ' ' 'd' 'o' ' ' 's' 'a' 'm' 'e' ' ' 't' 'o' ' ' 'y' 'o' 'u' '.' 0
+label(s_msg_nexaco_5)
+s_msg_nexaco_5:
+db 'D' 'r' 'o' 'p' ' ' 'g' 'u' 'n' 's' ' ' 'a' 'n' 'd' ' ' 'c' 'a' 's' 'h' ' ' 'a' 't' ' ' 't' 'h' 'e' ' ' 'b' 'a' 's' 'e' ' ' 't' 'o' ' ' 's' 'e' 'l' 'l' ' ' 't' 'h' 'e' 'm' '.' 0
+
+label(s_msg_pentacom_1)
+s_msg_pentacom_1:
+db 'Y' 'o' 'u' ' ' 'a' 'r' 'e' ' ' 'a' ' ' 'l' 'a' 'w' ' ' 'e' 'n' 'f' 'o' 'r' 'c' 'e' 'm' 'e' 'n' 't' ' ' 'o' 'f' 'f' 'i' 'c' 'e' 'r' ' ' 'o' 'f' ' ' 't' 'h' 'e' ' ' 'P' 'e' 'n' 't' 'a' 'c' 'o' 'm' ' ' 's' 'q' 'u' 'a' 'd' '.' 0
+label(s_msg_pentacom_2)
+s_msg_pentacom_2:
+db 'Y' 'o' 'u' 'r' ' ' 'g' 'o' 'a' 'l' ' ' 'i' 's' ' ' 't' 'o' ' ' 'a' 'r' 'r' 'e' 's' 't' ' ' 'N' 'e' 'x' 'a' 'c' 'o' ' ' 'g' 'a' 'n' 'g' 's' 't' 'e' 'r' 's' ' ' 'u' 's' 'i' 'n' 'g' ' ' 't' 'h' 'e' ' ' 'g' 'r' 'a' 'b' ' ' 'm' 'o' 'v' 'e' '.' 0
+label(s_msg_pentacom_3)
+s_msg_pentacom_3:
+db 'K' 'e' 'e' 'p' ' ' 'o' 'r' 'd' 'e' 'r' ' ' 'o' 'n' ' ' 't' 'h' 'e' ' ' 's' 't' 'r' 'e' 'e' 't' 's' ',' ' ' 'a' 'n' 'd' ' ' 'y' 'o' 'u' ' ' 'w' 'i' 'l' 'l' ' ' 'r' 'e' 'c' 'e' 'i' 'v' 'e' ' ' 'd' 'a' 'i' 'l' 'y' ' ' 's' 'a' 'l' 'a' 'r' 'y' '.' 0
+label(s_msg_pentacom_4)
+s_msg_pentacom_4:
+db 'D' 'r' 'o' 'p' ' ' 'f' 'i' 'r' 'e' 'a' 'r' 'm' 's' ' ' 'a' 't' ' ' 't' 'h' 'e' ' ' 'b' 'a' 's' 'e' ' ' 't' 'o' ' ' 's' 'e' 'l' 'l' ' ' 't' 'h' 'e' 'm' '.' ' ' '(' '$' '4' '0' '0' ' ' 'f' 'o' 'r' ' ' 'd' 'i' 's' 'k' 's' ')' 0
+
+
+//=============== funcs ===========================
+alloc(mycode,8192)
+mycode:
+
+createThread(init_func)
+
+label(init_data_func)
+init_data_func:
+
+  //--- h2
+
+  mov ecx,humans_max
+  xor ebx,ebx //h2*
+  label(init_h2_loop)
+  init_h2_loop:
+      mov [h20+h2_p+ebx],-1
+  add ebx,h2s
+  loop init_h2_loop
+
+ret
+
+
+label(tweak_map_func)
+tweak_map_func:
+
+  //--- tweak bases
+
+  mov eax,0 //goldmen
+  imul eax,corpsize
+    mov [corp0+corp_spawn+0+eax],(float)985.0 //976.0
+    mov [corp0+corp_table+0+eax],(float)986.0 //978.0
+    mov [corp0+corp_table+4+eax],(float)27.0 //26.0
+  mov eax,1 //mons
+  imul eax,corpsize
+    mov [corp0+corp_spawn+8+eax],(float)2086.0 //2096.0
+    mov [corp0+corp_table+8+eax],(float)2087.0 //2094.0
+    mov [corp0+corp_table+4+eax],(float)27.0 //26.0
+  mov eax,2 //oxs
+  imul eax,corpsize
+    mov [corp0+corp_spawn+0+eax],(float)2182.0 //2192.0
+    mov [corp0+corp_table+0+eax],(float)2183.0 //2190.0
+    mov [corp0+corp_table+4+eax],(float)59.0 //58.0
+  mov eax,3 //nexaco
+  imul eax,corpsize
+    mov [corp0+corp_spawn+0+eax],(float)2406.0 //2416.0
+    mov [corp0+corp_table+0+eax],(float)2407.0 //2414.0
+    mov [corp0+corp_table+4+eax],(float)42.0 //42.0
+  mov eax,4 //pentacom
+  imul eax,corpsize
+    mov [corp0+corp_spawn+8+eax],(float)986.0 //976.0
+    mov [corp0+corp_table+8+eax],(float)985.0 //978.0
+    mov [corp0+corp_table+4+eax],(float)27.0 //26.0
+
+ret
+
+
+
+label(init_func)
+init_func:
+  mov [game_mode],3
+  mov byte ptr [current_map+0],'t'
+  mov byte ptr [current_map+1],'e'
+  mov byte ptr [current_map+2],'s'
+  mov byte ptr [current_map+3],'t'
+  mov byte ptr [current_map+4],'2'
+  mov byte ptr [current_map+5],0
+
+  call init_data_func
+
+  //--- heli price ---
+   mov eax,18548
+   imul eax,B
+   mov [subrosadedicated_36b.exe+AE72FB0+eax],#20000
+
+//call sync_all_players_func
+  mov [game_reset],1
+ret
+
+
+label(count_team_members_func) //(int team, bool living_only)
+count_team_members_func:
+  lea ebp,[esp+4]
+  xor ecx,ecx //p
+  xor ebx,ebx //p*
+  xor edi,edi //count
+  label(count_team_members_loop)
+  count_team_members_loop:
+      cmp [p0+ebx],0
+        je count_team_members_next
+      cmp [p0+ebx],0
+        je count_team_members_next
+      mov eax,[ebp]
+      cmp [p0+p_team+ebx],eax
+        jne count_team_members_next
+
+      cmp [ebp+4],0
+      je count_team_members_count
+      cmp [p0+p_h+ebx],-1
+        je count_team_members_next
+
+      label(count_team_members_count)
+      count_team_members_count:
+         inc edi
+
+  label(count_team_members_next)
+  count_team_members_next:
+  add ebx,ps
+    inc ecx
+    cmp ecx,players_max
+    jle count_team_members_loop
+
+  mov eax,edi
+ret
+
+
+label(team_split_bonus_func) //(int team, bool living_only, int cash)
+team_split_bonus_func:
+  lea ebp,[esp+4]
+               push ebp
+  push [ebp+4]
+  push [ebp+0]
+  call count_team_members_func
+  add esp,8
+               pop ebp
+    cmp eax,0
+    jle team_split_ret
+
+  push eax
+    fild [ebp+8]
+    fidiv [esp]
+    fistp [esp]
+
+  xor ecx,ecx //p
+  xor ebx,ebx //p*
+  xor edi,edi //count
+  label(team_split_loop)
+  team_split_loop:
+      cmp [p0+ebx],0
+        je team_split_next
+      cmp [p0+ebx],0
+        je team_split_next
+      mov eax,[ebp]
+      cmp [p0+p_team+ebx],eax
+        jne team_split_next
+
+      cmp [ebp+4],0
+      je team_split_count
+      cmp [p0+p_h+ebx],-1
+        je team_split_next
+
+      label(team_split_count)
+      team_split_count:
+
+         mov eax,[esp]
+         add [p0+p_cash+ebx],eax
+
+  label(team_split_next)
+  team_split_next:
+  add ebx,ps
+    inc ecx
+    cmp ecx,players_max
+    jle team_split_loop
+
+  pop eax
+  label(team_split_ret)
+  team_split_ret:
+ret
+
+
+label(sync_all_players_func)
+sync_all_players_func:
+  mov ecx,players_max
+  xor ebx,ebx
+  label(sync_players_loop)
+  sync_players_loop:
+    push ebx
+      push ecx
+      call player_sync_func
+    pop ecx
+    pop ebx
+    add ebx,ps
+   dec ecx
+   cmp ecx,0
+   jge sync_players_loop
+ret
+
+//=============== hooks ===========================
+
+label(state1_tick_hook)
+state1_tick_hook:
+  cmp [map_tweaked],0
+  jne state1_tick_ret
+
+  call tweak_map_func
+  mov [map_tweaked],1
+
+      mov [game_reset],1
+label(state1_tick_ret)
+state1_tick_ret:
+ret
+
+label(player_death_hook) //eax = p, ecx = p*, esi = h*
+player_death_hook:
+
+mov ebx,[p0+p_h+ecx]
+cmp ebx,-1
+je player_death_ret
+
+imul ebx,h2s //h2*
+mov [h20+h2_p+ebx],eax
+
+label(player_death_ret)
+player_death_ret:
+ret
+
+
+label(base_car_hook) //edi = team
+base_car_hook:
+  lea ebp,[esp+24]
+
+cmp edi,4
+jne base_car_notpenta
+
+push (float)989.0
+push (float)25.0
+push (float)1652.0
+mov esi,esp
+
+push 4
+push [ebp+C]
+push 0
+push esi
+push #14 //hatchback
+call vehicle_spawn_func
+               //(type, *float[3] position, [*float[3] velocity], *float[9] orientation, color)
+add esp,20
+
+
+jmp base_car_ret
+label(base_car_notpenta)
+base_car_notpenta:
+  cmp edi,3
+  jne base_car_ret
+   //nexaco
+
+push (float)0.0
+push (float)1.0
+push (float)0.0
+  push (float)0.0
+  push (float)0.0
+  push (float)1.0
+push (float)1.0
+push (float)0.0
+push (float)0.0
+mov esi,esp
+
+mov eax,3
+imul eax,corpsize
+
+push esi
+push 0
+  lea esi,[corp0+corp_table+eax]
+  push esi
+push D //nade
+call item_spawn_func
+               //(int item_type, float *pos, [float* velocity], float *orientation)
+call item_spawn_func
+   //lea esi,[esp+14]
+   //mov [esp+8],esi
+call item_spawn_func
+   //lea esi,[esp+18]
+   //mov [esp+8],esi
+call item_spawn_func
+   //lea esi,[esp+1C]
+   //mov [esp+8],esi
+call item_spawn_func
+add esp,34
+
+
+label(base_car_ret)
+base_car_ret:
+ret
+
+
+label(state_31_hook)
+state_31_hook:
+
+call init_data_func
+
+ret
+
+
+
+label(state_23_hook)
+state_23_hook:
+
+call sync_all_players_func
+
+ret
+
+
+label(state_12_hook)
+state_12_hook:
+
+//--- open doors
+  mov eax,3 //nexaco
+    imul ebx,eax,corpsize
+    mov [corp0+corp_door+ebx],1
+         push 1
+         push eax
+         call door_sync_func
+         add esp,8
+  mov eax,4 //pentacom
+    imul ebx,eax,corpsize
+    mov [corp0+corp_door+ebx],1
+         push 1
+         push eax
+         call door_sync_func
+         add esp,8
+//---
+
+xor ecx,ecx //p
+xor ebx,ebx //p*
+label(state_12_loop)
+state_12_loop:
+  cmp [p0+ebx],0
+    je state_12_next
+  cmp [p0+p_team+ebx],3
+    je state_12_nexaco
+  cmp [p0+p_team+ebx],4
+    je state_12_pentacom
+  jmp state_12_next
+label(state_12_nexaco)
+state_12_nexaco:
+
+     pushad
+        push 0
+        push ecx
+        push s_msg_nexaco_1
+        push 6
+        call msg_func
+           mov [esp+4],s_msg_nexaco_2
+             call msg_func
+           mov [esp+4],s_msg_nexaco_3
+             call msg_func
+           mov [esp+4],s_msg_nexaco_4
+             call msg_func
+           mov [esp+4],s_msg_nexaco_5
+             call msg_func
+        add esp,10
+      popad
+
+jmp state_12_next
+label(state_12_pentacom)
+state_12_pentacom:
+
+     add [p0+p_cash+ebx],pentacom_salary
+
+     pushad
+        push 0
+        push ecx
+        push s_msg_pentacom_1
+        push 6
+        call msg_func
+           mov [esp+4],s_msg_pentacom_2
+             call msg_func
+           mov [esp+4],s_msg_pentacom_3
+             call msg_func
+           mov [esp+4],s_msg_pentacom_4
+             call msg_func
+        add esp,10
+      popad
+
+label(state_12_next)
+state_12_next:
+add ebx,ps
+inc ecx
+  cmp ecx,players_max
+  jle state_12_loop
+
+call sync_all_players_func
+ret
+
+
+label(drop_item_hook) //eax = i, ecx = h
+drop_item_hook:
+ cmp [game_state],2
+ jne drop_item_ret
+      imul ecx,hs
+      mov edi,[h0+h_p+ecx] //p
+        cmp edi,-1
+          je drop_item_ret
+      imul edx,edi,ps //p*
+        cmp [p0+p_team+edx],3
+          jl drop_item_ret
+        cmp [p0+p_menu+edx],0
+          je drop_item_ret
+
+      imul ebx,eax,is
+      mov ebp,[i0+i_type+ebx]
+            cmp ebp,1
+             je drop_item_sell
+            cmp ebp,3
+             je drop_item_sell
+            cmp ebp,5
+             je drop_item_sell
+            cmp ebp,7
+             je drop_item_sell
+            cmp ebp,9
+             je drop_item_sell
+            cmp ebp,B
+             je drop_item_sell
+
+             cmp [p0+p_team+edx],3
+             jne drop_item_check_notnexaco
+              //nexaco
+                  cmp ebp,11
+                   je drop_item_sell
+                  jmp drop_item_ret
+             label(drop_item_check_notnexaco)
+             drop_item_check_notnexaco:
+              //pentacom
+                  cmp ebp,13
+                   jl drop_item_ret
+                  cmp ebp,18
+                   jg drop_item_ret
+                  jmp drop_item_sell
+
+       jmp drop_item_ret
+       label(drop_item_sell)
+       drop_item_sell:
+
+      mov [i0+i_despawn+ebx],0
+        mov esi,[i0+i_pb+ebx]
+        imul esi,pbs
+        mov [pb0+pb_pos+8+esi],(float)1450.0
+        mov [pb0+pb_pos+4+esi],(float)-300.0
+          cmp [i0+i_contains+ebx],0
+          je drop_item_skip_unload
+                    pushad
+                             mov ebp,[i0+i_contains+4+ebx]
+                             imul esi,ebp,is
+                             mov [i0+i_despawn+esi],0
+                             mov [i0+i_contained+esi],-1
+                                    //mov [i0+esi],0
+                               mov esi,[i0+i_pb+esi]
+                               imul esi,pbs
+                               mov [pb0+pb_pos+8+esi],(float)1450.0
+                               mov [pb0+pb_pos+4+esi],(float)-300.0
+
+                 {push eax
+                 push ebp
+                 call item_uncontain_func
+                 add esp,4
+                 pop eax}
+                    popad
+          label(drop_item_skip_unload)
+          drop_item_skip_unload:
+                mov [i0+ebx],0
+
+mov eax,ebp //it
+imul ebp,its //it*
+
+cmp eax,11
+  je drop_item_sell_cash
+    cmp eax,13
+      jl drop_item_sell_regular
+    cmp eax,18
+      jg drop_item_sell_regular
+jmp drop_item_sell_disk
+
+label(drop_item_sell_disk)
+drop_item_sell_disk:
+  //------ selling disk -------
+
+    pushad
+push #400
+push 0
+push 4
+call team_split_bonus_func
+add esp,C
+mov [esp+4],eax //esi
+    popad
+
+jmp drop_item_sold
+label(drop_item_sell_cash)
+drop_item_sell_cash:
+  //------ selling cash -------
+
+    pushad
+push #1000
+push 1
+push 3
+call team_split_bonus_func
+add esp,C
+mov [esp+4],eax //esi
+    popad
+
+jmp drop_item_sold
+label(drop_item_sell_regular)
+drop_item_sell_regular:
+  //------ selling gun -------
+
+      mov esi,[it0+it_price+ebp]
+      add [p0+p_cash+edx],esi
+
+label(drop_item_sold)
+drop_item_sold:
+                                   push edi
+      push esi
+        lea eax,[it0+it_name+ebp]
+        push eax
+      push s_sold
+      push tmpbuffer
+      call msvcrt.sprintf
+      add esp,10
+                                   pop edi
+
+      push 0
+      push edi
+      push tmpbuffer
+      push 6
+      call msg_func
+      add esp,10
+
+
+label(drop_item_ret)
+drop_item_ret:
+ret
+
+label(grab_h_check_hook) //ebp = h_dst, esi = h_src*
+grab_h_check_hook:
+
+  mov ecx,[h0+h_p+esi]
+  cmp ecx,-1
+    je grab_h_ret
+  imul ecx,ps //p_src*
+
+  imul ebx,ebp,hs //h_dst*
+         cmp [h0+ebx],0
+           je grab_h_ret
+
+  mov edx,[h0+h_p+ebx]
+  cmp edx,-1
+    jne grab_p_dst_found
+
+  imul edx,ebp,h2s
+  mov edx,[h20+h2_p+edx]
+    cmp edx,-1
+      je grab_h_ret
+
+label(grab_p_dst_found)
+grab_p_dst_found:
+  imul edx,ps //p_dst*
+
+
+cmp [p0+p_team+ecx],3
+  jne grab_h_notnexaco
+//nexaco
+
+cmp [p0+p_team+edx],2
+  jg grab_h_ret
+
+mov edi,(float)reward_mugging
+jmp grab_h_check
+
+label(grab_h_notnexaco)
+grab_h_notnexaco:
+cmp [p0+p_team+ecx],4
+  jne grab_h_ret
+//pentacop
+
+cmp [p0+p_team+edx],3
+  jne grab_h_ret
+
+mov edi,(float)reward_arrest
+
+label(grab_h_check)
+grab_h_check:
+
+ inc [h0+h_progress+esi]
+ cmp [h0+h_progress+esi],#200
+ jl grab_h_ret
+
+mov [p0+p_h+edx],-1
+mov [h0+h_p+ebx],-1
+mov [h0+h_health+ebx],0
+      pushad
+    push ebp
+    call human_remove_func
+    add esp,4
+      popad
+
+mov eax,[p0+p_team+edx]
+imul eax,stockss
+mov eax,[stocks0+stock_price+eax]
+imul eax,[p0+p_stocks+edx]
+add eax,[p0+p_cash+edx]
+push eax
+push edi
+  fild [esp+4]
+  fmul [esp]
+add esp,4
+fistp [esp]
+pop eax
+    cmp eax,0
+    jl grab_h_ret
+
+add [p0+p_cash+ecx],eax
+sub [p0+p_cash+edx],eax
+                       push ebx //h_dst*
+                       push eax //+cash
+                         push [p0+p_team+edx]
+                           push esi //h_src*
+  lea edi,[p0+p_name+edx]
+  push edi
+push eax
+push s_taken
+push tmpbuffer
+call msvcrt.sprintf
+add esp,10
+                           pop esi
+push 0
+push [h0+h_p+esi]
+push tmpbuffer
+push 6
+call msg_func
+add esp,10
+                        pop ebp //team
+                        pop eax //+cash
+                        pop ebx //h_dst*
+       pushad
+push eax
+push s_robbed
+push tmpbuffer
+call msvcrt.sprintf
+add esp,C
+       popad
+       pushad
+push 0
+push [h0+h_p+ebx]
+push tmpbuffer
+push 6
+call msg_func
+add esp,10
+       popad
+                      cmp ebp,3
+                      je grab_h_ret
+
+xor ecx,ecx //p
+xor ebx,ebx //p*
+label(grab_h_fine_penta_loop)
+grab_h_fine_penta_loop:
+  cmp [p0+ebx],0
+    je grab_h_fine_penta_next
+  cmp [p0+p_team+ebx],4
+    jne grab_h_fine_penta_next
+
+    sub [p0+p_cash+ebx],pentacom_fine
+
+         pushad
+      imul eax,ebp,s_corp_name_len
+      lea eax,[s_corp_names+eax]
+     push eax
+    push pentacom_fine
+    push s_fined
+    push tmpbuffer
+    call msvcrt.sprintf
+    add esp,10
+         popad
+         pushad
+   push 0
+   push ecx
+   push tmpbuffer
+   push 6
+   call msg_func
+   add esp,10
+         popad
+
+label(grab_h_fine_penta_next)
+grab_h_fine_penta_next:
+   add ebx,ps
+     inc ecx
+     cmp ecx,players_max
+     jle grab_h_fine_penta_loop
+
+label(grab_h_ret)
+grab_h_ret:
+ret
+
+
+label(damage_hook_func) //ebp = args (h, bp, 0, hp), esi = bullet*
+damage_hook_func:
+
+mov ecx,[ebp+0] //h_dst
+imul ebx,ecx,hs //h_dst*
+
+mov edx,[h0+h_p+ebx] //p_dst
+cmp edx,-1
+  je damage_ret
+{imul esi,edx,ps //p_dst*
+cmp [p0+p_team+esi],7
+  jne damage_ret
+cmp [h0+h_spawn_timer+ebx],#10
+  jle damage_ret}
+
+//...
+
+label(damage_ret)
+damage_ret:
+ret
+
+
+label(death_tax_hook) //edi = p*
+death_tax_hook:
+  cmp [p0+p_team+edi],3
+    jne death_tax_notnexaco
+  //nexaco
+       push (float)death_tax_nexaco
+       fmul [esp]
+       add esp,4
+  jmp death_tax_ret
+  label(death_tax_notnexaco)
+  death_tax_notnexaco:
+  cmp [p0+p_team+edi],4
+    jne death_tax_notpentacom
+  //pentacom
+       push (float)death_tax_pentacom
+       fmul [esp]
+       add esp,4
+  jmp death_tax_ret
+  label(death_tax_notpentacom)
+  death_tax_notpentacom:
+
+  label(death_tax_ret)
+  death_tax_ret:
+ret
+
+
+label(round_player_spawn_hook) //b4 human spawn call
+round_player_spawn_hook:
+     lea ebp,[esp+24] //args: (float* position, float* rotation, int player_id)
+
+     mov ebx,[ebp+0]
+       {fld [ebx+4]
+         push (float)11.5
+         fsub [esp]
+         add esp,4
+       fstp [ebx+4]}
+
+ret
+
+
+label(player_sync_hook) //edi = &amp;msg.name, esi = &amp;p.name
+player_sync_hook:       //eax = p*
+    cmp [game_state],2
+     je player_sync_team_hook_ret
+  mov ebx,[p0+p_team+eax]
+    cmp ebx,7
+     jge player_sync_team_hook_ret
+    cmp ebx,2
+     jle player_sync_team_hook_ret
+
+               push edi
+     push esi
+       imul ebx,s_corp_name_len
+       lea ebx,[s_corp_names+ebx]
+       push ebx
+     push s_format_tag
+     push tmpbuffer
+     call msvcrt.sprintf
+     add esp,10
+               pop edi
+     push 1C
+     push tmpbuffer
+     push edi
+     call msvcrt.strncpy
+     add esp,4
+     pop edi
+     add esp,4
+        mov byte ptr [edi+1D],'.'
+        mov byte ptr [edi+1E],'.'
+        mov byte ptr [edi+1F],'.'
+
+     //mov byte ptr [edi+1],0
+  label(player_sync_hook_ret)
+  player_sync_hook_ret:
+ret
+
+label(player_sync_team_hook) //eax = p*, esi = team [out]
+player_sync_team_hook:
+    cmp [game_state],2
+     je player_sync_team_hook_ret
+    cmp esi,7
+     jge player_sync_team_hook_ret
+    cmp esi,2
+     jle player_sync_team_hook_ret
+    mov esi,3
+  label(player_sync_team_hook_ret)
+  player_sync_team_hook_ret:
+ret
+
+label(round_team_switch_spec_hook) //esi = p*
+round_team_switch_spec_hook:
+  mov eax,[p0+p_team+esi]
+    cmp eax,2
+     jg rtss_over_oxs
+          mov [p0+p_team+esi],3
+    jmp rtss_ret
+
+  label(rtss_over_oxs)
+  rtss_over_oxs:
+    cmp eax,4
+     je rtss_spec
+          inc [p0+p_team+esi]
+    jmp rtss_ret
+
+  label(rtss_spec)
+  rtss_spec:
+          mov [p0+p_team+esi],7
+  label(rtss_ret)
+  rtss_ret:
+ret
+
+
+//================ injections =====================
+
+//base car spawn
+
+alloc(newmem123,2048)
+label(returnhere123)
+label(originalcode123)
+label(exit123)
+
+newmem123:
+
+//  cmp edi,4
+//  jne originalcode123
+//mov [esp],6 //beamer
+//mov [esp+10],4 //white?
+   //visual desync!
+  pushad
+call base_car_hook
+  popad
+originalcode123:
+call subrosadedicated_36b.exe+4E940
+   //(type, *float[3] position, [*float[3] velocity], *float[9] orientation, color)
+
+exit123:
+jmp returnhere123
+
+"subrosadedicated_36b.exe"+8CE25:
+jmp newmem123
+returnhere123:
+
+
+
+
+//item drop
+
+alloc(newmem108,2048)
+label(returnhere108)
+label(originalcode108)
+label(exit108)
+
+newmem108:
+    pushad
+  mov eax,edi
+  call drop_item_hook
+    popad
+originalcode108:
+call subrosadedicated_36b.exe+260B0
+
+exit108:
+jmp returnhere108
+
+"subrosadedicated_36b.exe"+4A61B:
+jmp newmem108
+returnhere108:
+
+
+//h progress reset
+
+alloc(newmem94,2048)
+label(returnhere94)
+label(originalcode94)
+label(exit94)
+
+newmem94:
+
+cmp [eax+h_grab0-h_progress],1
+ je exit94
+
+originalcode94:
+mov [eax],00000000
+
+exit94:
+jmp returnhere94
+
+"subrosadedicated_36b.exe"+921D0:
+jmp newmem94
+nop
+returnhere94:
+
+
+//grab h check
+
+alloc(newmem81,2048)
+label(returnhere81)
+label(originalcode81)
+label(exit81)
+
+newmem81:
+     pushad
+  mov esi,ebp
+  mov ebp,[ebx+subrosadedicated_36b.exe+5CF758]
+call grab_h_check_hook
+     popad
+originalcode81:
+mov ebp,[ebx+subrosadedicated_36b.exe+5CF758]
+
+exit81:
+jmp returnhere81
+
+"subrosadedicated_36b.exe"+69FC3:
+jmp newmem81
+nop
+returnhere81:
+
+//apply damage func
+
+alloc(newmem69,2048)
+label(returnhere69)
+label(originalcode69)
+label(exit69)
+
+newmem69:
+              pushad
+//esi = bullet*
+lea ebp,[esp+20]
+call damage_hook_func
+              popad
+originalcode69:
+call subrosadedicated_36b.exe+9130
+
+exit69:
+jmp returnhere69
+
+"subrosadedicated_36b.exe"+64BA2:
+jmp newmem69
+returnhere69:
+
+
+//death tax
+
+alloc(newmem58,2048)
+label(returnhere58)
+label(originalcode58)
+label(exit58)
+
+newmem58:
+    pushad
+      call death_tax_hook
+    popad
+originalcode58:
+fmul qword ptr [subrosadedicated_36b.exe+944A8]
+
+exit58:
+jmp returnhere58
+
+"subrosadedicated_36b.exe"+1EBB3:
+jmp newmem58
+nop
+returnhere58:
+
+
+//stocks check
+
+alloc(newmem32,2048)
+label(returnhere32)
+label(originalcode32)
+label(exit32)
+
+newmem32: //ebx = p0
+je subrosadedicated_36b.exe+721B
+
+cmp [p0+p_team+ebx],2
+jg subrosadedicated_36b.exe+721B
+
+originalcode32:
+//je subrosadedicated_36b.exe+721B
+
+exit32:
+jmp returnhere32
+
+"subrosadedicated_36b.exe"+7194:
+jmp newmem32
+nop
+returnhere32:
+
+
+
+//round player spawn (human spawn call)
+
+alloc(newmem24,2048)
+label(returnhere24)
+label(originalcode24)
+label(exit24)
+
+newmem24:
+     pushad
+call round_player_spawn_hook
+     popad
+originalcode24:
+call subrosadedicated_36b.exe+7CE40
+
+exit24:
+jmp returnhere24
+
+"subrosadedicated_36b.exe"+8CBF1:
+jmp newmem24
+returnhere24:
+
+
+//round state 1 player team check for spawn (?)
+
+subrosadedicated_36b.exe+8D039:
+cmp edi,06
+
+subrosadedicated_36b.exe+8CDBF:
+cmp edi,subrosadedicated_36b.exe+8F969C8
+
+subrosadedicated_36b.exe+8D11B:
+cmp edx,06
+
+subrosadedicated_36b.exe+8CAC7:
+cmp eax,06
+
+//round state 1 timer, team check
+
+//subrosadedicated_36b.exe+8CA8D:
+//cmp eax,06
+
+//game state 3 -&gt; 1 (reset)
+
+alloc(newmem139,2048)
+label(returnhere139)
+label(originalcode139)
+label(exit139)
+
+newmem139:
+    pushad
+call state_31_hook
+    popad
+originalcode139:
+mov [subrosadedicated_36b.exe+8F7A464],esi
+
+exit139:
+jmp returnhere139
+
+"subrosadedicated_36b.exe"+85450:
+jmp newmem139
+nop
+returnhere139:
+
+//game state 2 -&gt; 3
+
+alloc(newmem17,2048)
+label(returnhere17)
+label(originalcode17)
+label(exit17)
+
+newmem17:
+mov [subrosadedicated_36b.exe+8F7A464],00000003
+     pushad
+call state_23_hook
+     popad
+originalcode17:
+//mov [subrosadedicated_36b.exe+8F7A464],00000003
+
+exit17:
+jmp returnhere17
+
+"subrosadedicated_36b.exe"+8D654:
+jmp newmem17
+nop 5
+returnhere17:
+
+
+//game state 1 -&gt; 2
+
+alloc(newmem11,2048)
+label(returnhere11)
+label(originalcode11)
+label(exit11)
+
+newmem11:
+mov [subrosadedicated_36b.exe+8F7A464],00000002
+     pushad
+call state_12_hook
+     popad
+originalcode11:
+//mov [subrosadedicated_36b.exe+8F7A464],00000002
+
+exit11:
+jmp returnhere11
+
+"subrosadedicated_36b.exe"+8D1CA:
+jmp newmem11
+nop 5
+returnhere11:
+
+
+//player sync, on team read
+
+alloc(newmem6,2048)
+label(returnhere6)
+label(originalcode6)
+label(exit6)
+
+newmem6:
+mov esi,[eax+subrosadedicated_36b.exe+13AFCEDC]
+   pushad
+     call player_sync_team_hook
+     mov [esp+4],esi
+   popad
+originalcode6:
+//mov esi,[eax+subrosadedicated_36b.exe+13AFCEDC]
+
+exit6:
+jmp returnhere6
+
+"subrosadedicated_36b.exe"+78FB:
+jmp newmem6
+nop
+returnhere6:
+
+//player sync, after name copy
+
+alloc(newmem2,2048)
+label(returnhere2)
+label(originalcode2)
+label(exit2)
+
+newmem2:
+   pushad
+ sub esi,#31
+ sub edi,#31
+ call player_sync_hook
+   popad
+originalcode2:
+pop edi
+mov byte ptr [edx+subrosadedicated_36b.exe+95FB87F],00
+
+exit2:
+jmp returnhere2
+
+"subrosadedicated_36b.exe"+79A9:
+jmp newmem2
+nop 3
+returnhere2:
+
+//round team switch to spectator
+
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem:
+  pushad
+mov esi,ebx
+call round_team_switch_spec_hook
+  popad
+originalcode:
+//mov [ebx+subrosadedicated_36b.exe+13AFCEDC],00000007
+
+exit:
+jmp returnhere
+
+"subrosadedicated_36b.exe"+811C4:
+jmp newmem
+nop 5
+returnhere:
+
+//no dead drops
+
+subrosadedicated_36b.exe+5574F:
+jmp subrosadedicated_36b.exe+557F6
+nop
+
+//heli for purchase
+subrosadedicated_36b.exe+6C84:
+mov esi,B
+
+//player death
+
+alloc(newmem157,2048)
+label(returnhere157)
+label(originalcode157)
+label(exit157)
+
+newmem157:
+    pushad
+call player_death_hook
+    popad
+originalcode157:
+mov [ecx+subrosadedicated_36b.exe+13AFCEF0],edi
+
+exit157:
+jmp returnhere157
+
+"subrosadedicated_36b.exe"+9191D:
+jmp newmem157
+nop
+returnhere157:
+
+//state 1 tick
+
+alloc(newmem175,2048)
+label(returnhere175)
+label(originalcode175)
+label(exit175)
+
+newmem175:
+     pushad
+call state1_tick_hook
+     popad
+originalcode175:
+mov [subrosadedicated_36b.exe+8F7A46C],ebx
+
+exit175:
+jmp returnhere175
+
+"subrosadedicated_36b.exe"+8CD10:
+jmp newmem175
+nop
+returnhere175:
+
+
+//map name reset
+
+subrosadedicated_36b.exe+851CE:
+jmp subrosadedicated_36b.exe+8523E
+
+//============== low priority =======================
+
+// team switch timer
+subrosadedicated_36b.exe+811DD:
+mov [ebx+subrosadedicated_36b.exe+13AFCEE0],#8
+subrosadedicated_36b.exe+8116A:
+mov [ebx+subrosadedicated_36b.exe+13AFCEE0],#8
+
+//round suit color
+
+alloc(newmem49,2048)
+label(returnhere49)
+label(originalcode49)
+label(exit49)
+
+newmem49:
+
+cmp [esi],3
+jne round_suits_notnexaco
+//nexaco
+
+mov [esi+3738],#13
+jmp subrosadedicated_36b.exe+8CBBD
+
+label(round_suits_notnexaco)
+round_suits_notnexaco:
+cmp [esi],4
+jne round_suits_notpenta
+//pentacom
+
+mov [esi+3738],#10
+jmp subrosadedicated_36b.exe+8CBBD
+
+label(round_suits_notpenta)
+round_suits_notpenta:
+
+//cmp [esi+3738],9 //purple
+cmp [esi+3738],#13 //white
+  je subrosadedicated_36b.exe+8CBB5
+//cmp [esi+3738],4 //cyan
+//cmp [esi+3738],#13 //white
+cmp [esi+3738],#10 //blue
+  je subrosadedicated_36b.exe+8CBB5
+
+label(round_suits_skip)
+round_suits_skip:
+
+originalcode49:
+cmp [esi+00003738],ebp
+
+exit49:
+jmp returnhere49
+
+"subrosadedicated_36b.exe"+8CBAD:
+jmp newmem49
+nop
+returnhere49:
+
+
+[DISABLE]
+dealloc(newmem175)
+"subrosadedicated_36b.exe"+8CD10:
+mov [subrosadedicated_36b.exe+8F7A46C],ebx
+//Alt: db 89 1D 6C A4 E2 09
+dealloc(newmem157)
+"subrosadedicated_36b.exe"+9191D:
+mov [ecx+subrosadedicated_36b.exe+13AFCEF0],edi
+//Alt: db 89 B9 F0 CE B8 14
+dealloc(newmem156)
+"subrosadedicated_36b.exe"+91923:
+call subrosadedicated_36b.exe+78C0
+//Alt: db E8 98 5F F7 FF
+dealloc(newmem139)
+"subrosadedicated_36b.exe"+85450:
+mov [subrosadedicated_36b.exe+8F7A464],esi
+//Alt: db 89 35 64 A4 00 0A
+dealloc(newmem123)
+"subrosadedicated_36b.exe"+8CE25:
+call subrosadedicated_36b.exe+4E940
+//Alt: db E8 16 1B FC FF
+dealloc(newmem108)
+"subrosadedicated_36b.exe"+4A61B:
+call subrosadedicated_36b.exe+260B0
+//Alt: db E8 90 BA FD FF
+dealloc(newmem94)
+"subrosadedicated_36b.exe"+921D0:
+mov [eax],00000000
+//Alt: db C7 00 00 00 00 00
+dealloc(newmem81)
+"subrosadedicated_36b.exe"+69FC3:
+mov ebp,[ebx+subrosadedicated_36b.exe+5CF758]
+//Alt: db 8B AB 58 F7 02 01
+dealloc(newmem69)
+"subrosadedicated_36b.exe"+64BA2:
+call subrosadedicated_36b.exe+9130
+//Alt: db E8 89 45 FA FF
+dealloc(newmem58)
+"subrosadedicated_36b.exe"+1EBB3:
+fmul qword ptr [subrosadedicated_36b.exe+944A8]
+//Alt: db DC 0D A8 44 AF 00
+dealloc(newmem49)
+"subrosadedicated_36b.exe"+8CBAD:
+cmp [esi+00003738],ebp
+//Alt: db 39 AE 38 37 00 00
+
+dealloc(newmem32)
+"subrosadedicated_36b.exe"+7194:
+je subrosadedicated_36b.exe+721B
+//Alt: db 0F 84 81 00 00 00
+dealloc(newmem24)
+"subrosadedicated_36b.exe"+8CBF1:
+call subrosadedicated_36b.exe+7CE40
+//Alt: db E8 4A 02 FF FF
+dealloc(newmem17)
+"subrosadedicated_36b.exe"+8D654:
+mov [subrosadedicated_36b.exe+8F7A464],00000003
+//Alt: db C7 05 64 A4 06 0A 03 00 00 00
+dealloc(newmem11)
+"subrosadedicated_36b.exe"+8D1CA:
+mov [subrosadedicated_36b.exe+8F7A464],00000002
+//Alt: db C7 05 64 A4 06 0A 02 00 00 00
+dealloc(newmem6)
+"subrosadedicated_36b.exe"+78FB:
+mov esi,[eax+subrosadedicated_36b.exe+13AFCEDC]
+//Alt: db 8B B0 DC CE BE 14
+dealloc(newmem2)
+"subrosadedicated_36b.exe"+79A9:
+pop edi
+mov byte ptr [edx+subrosadedicated_36b.exe+95FB87F],00
+//Alt: db 5F C6 82 7F B8 6E 0A 00
+dealloc(newmem)
+"subrosadedicated_36b.exe"+811C4:
+mov [ebx+subrosadedicated_36b.exe+13AFCEDC],00000007
+//Alt: db C7 83 DC CE BE 14 07 00 00 00
+
+dealloc(mycode)
+dealloc(strings)
+dealloc(tmpbuffer)
+dealloc(tmpbuffer2)
+dealloc(tmpbuffer3)
+dealloc(tmpbuffer4)
+dealloc(mydata)
+
+subrosadedicated_36b.exe+8D039:
+cmp edi,03
+subrosadedicated_36b.exe+8CA8D:
+cmp eax,03
+subrosadedicated_36b.exe+8D11B:
+cmp edx,03
+subrosadedicated_36b.exe+8CAC7:
+cmp eax,03
+
+subrosadedicated_36b.exe+8CB01:
+fmul qword ptr [subrosadedicated_36b.exe+943B8] // (3.00)
+
+
+subrosadedicated_36b.exe+811DD:
+mov [ebx+subrosadedicated_36b.exe+13AFCEE0],0000003C
+
+subrosadedicated_36b.exe+8116A:
+mov [ebx+subrosadedicated_36b.exe+13AFCEE0],0000003C
+
+subrosadedicated_36b.exe+8CDBF:
+cmp edi,subrosadedicated_36b.exe+8F8B4D0
+
+subrosadedicated_36b.exe+5574F:
+je subrosadedicated_36b.exe+557F6
+
+subrosadedicated_36b.exe+6C8F:
+mov esi,00000005
+subrosadedicated_36b.exe+6C84:
+mov esi,4
+
+subrosadedicated_36b.exe+9192B:
+mov [esi+subrosadedicated_36b.exe+5CC3D0],edi
+
+subrosadedicated_36b.exe+91923:
+call subrosadedicated_36b.exe+78C0
+
+subrosadedicated_36b.exe+851CE:
+je subrosadedicated_36b.exe+8523E
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>63</ID>
+          <Description>"ninja mode"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>//define(platform_cars,0) //town car
+define(platform_cars,7) //van
+
+//=============== mem locations ===========
+
+define(p0,subrosadedicated_36b.exe+13AFCE60)
+define(p_name,4)
+define(p_phone,30)
+define(p_cash,4C)
+define(p_crime,54)
+define(p_team,7C)
+define(p_stocks,84)
+define(p_h,90)
+define(p_menu,158)
+define(p_suit_model,37B0)
+define(p_suit_color,37B4)
+define(ps,3824)
+define(players_max,#255)
+
+define(h0,subrosadedicated_36b.exe+5CC3C8)
+define(h_p,8)
+define(h_car,20)
+define(h_seat,24)
+define(h_despawn,30)
+define(h_health,34)
+define(h_spawn_timer,48)
+define(h_pos,78)
+define(h_grab0,338C)
+define(h_progress,3530)
+define(hs,3748)
+define(humans_max,#255)
+
+define(i0,subrosadedicated_36b.exe+90331E0)
+define(i_type,10)
+define(i_despawn,18)
+define(i_contained,24)
+define(i_contains,30)
+define(i_pb,54)
+define(is,250)
+
+define(it0,subrosadedicated_36b.exe+1A0639C0)
+define(it_price,0)
+define(it_name,28)
+define(its,EA4)
+
+define(bt0,subrosadedicated_36b.exe+24F860)
+define(b_type,0)
+define(b_owner_p,8)
+define(b_vel,2C)
+define(bs,5C)
+
+define(pb0,subrosadedicated_36b.exe+9B950)
+define(pb_weight,0)
+define(pb_pos,4)
+define(pb_vel,10)
+define(pb_torque,4C)
+define(pbs,AC)
+
+define(v0,subrosadedicated_36b.exe+81B23E0)
+define(v_type,4)
+define(v_health,C)
+define(v_pb,28)
+define(vs,5044)
+
+define(versus_allowrespawn,subrosadedicated_36b.exe+9032488)
+
+define(player_sync_func,subrosadedicated_36b.exe+78C0)
+
+define(game_state,subrosadedicated_36b.exe+8F7A464)
+define(game_mode,subrosadedicated_36b.exe+8F7A248)
+define(game_daytime,subrosadedicated_36b.exe+351EAEA0)
+define(game_timer,subrosadedicated_36b.exe+8F7A46C)
+define(game_timer2,subrosadedicated_36b.exe+8F7A470)
+
+define(player_create_func,subrosadedicated_36b.exe+34530)
+define(human_spawn_func,subrosadedicated_36b.exe+7CE40)
+               //(float* position, float* rotation, int player_id)
+define(vehicle_spawn_func,subrosadedicated_36b.exe+4E940)
+               //(type, *float[3] position, [*float[3] velocity], *float[9] orientation, color)
+define(arm_func,subrosadedicated_36b.exe+544A0)
+define(msg_func,subrosadedicated_36b.exe+7700)
+
+define(human_remove_func,subrosadedicated_36b.exe+416C0)
+
+define(door_sync_func,subrosadedicated_36b.exe+7AD0)
+
+define(item_uncontain_func,subrosadedicated_36b.exe+A650)
+           //(int ammo, int gun)
+
+define(item_spawn_func,subrosadedicated_36b.exe+49CE0)
+               //(int item_type, float *pos, [float* velocity], float *orientation)
+
+define(spawn_explosion_particles_func,subrosadedicated_36b.exe+1F0F0)
+               //(int type, float* pos)
+
+define(spawn_explosion_func,subrosadedicated_36b.exe+251E0)
+               //(int item)
+
+[ENABLE]
+
+
+
+//=================== strings =======
+
+alloc(strings,8192)
+strings:
+label(s_filepath)
+s_filepath:
+db 'p' 'a' 'r' 'k' 'o' 'u' 'r' '_' 'w' 'i' 'n' 'n' 'e' 'r' 's' '.' 't' 'x' 't' 0
+label(s_r)
+s_r:
+db 'r' 'b' 0
+label(s_a)
+s_a:
+db 'a' '+' 0
+label(s_winners)
+s_winners:
+db 'W' 'i' 'n' 'n' 'e' 'r' 's' ':' 0
+label(s_winner_format)
+s_winner_format:
+db ',' ' ' '%' 's'
+
+//=================== data ==========
+
+alloc(tmpbuffer,8192)
+
+alloc(mydata,32768)
+define(platform_count,mydata+0)
+define(platform_step,mydata+4)
+define(treasure_pos,mydata+14)
+define(spawn_points,mydata+20)
+define(spawn_point_size,20)
+
+define(v20,mydata+70)
+define(v2_type,0)
+  define(PLATFORM_NONE,0)
+  define(PLATFORM_STATIC,1)
+  define(PLATFORM_FIXED,2)
+  define(PLATFORM_STRAFING,3)
+define(v2_phase,4)
+define(v2_pos,8)
+define(v2s,24)
+define(v2_max,#512)
+
+
+//================ funcs =================
+
+createthread(init_func)
+
+alloc(mycode,8196)
+mycode:
+
+
+label(init_func)
+init_func:
+
+  mov [platform_count],#44
+  mov [platform_step],(float)2.1825
+
+  xor eax,eax
+   mov [spawn_points+0+eax],(float)1509.0
+   mov [spawn_points+4+eax],(float)70.0 //24.6
+   mov [spawn_points+8+eax],(float)1705.0
+
+  mov eax,1
+  imul eax,spawn_point_size
+   mov [spawn_points+0+eax],(float)1609.0
+   mov [spawn_points+4+eax],(float)70.0 //24.6
+   mov [spawn_points+8+eax],(float)1705.0
+
+   mov [treasure_pos+0],(float)1559.0
+   mov [treasure_pos+4],(float)72.9
+   mov [treasure_pos+8],(float)1705.0
+
+ret
+
+label(frand1)
+frand1:
+call msvcrt.rand
+push eax
+fild dword [esp]
+push 7FFF //randmax
+fidiv dword [esp]
+add esp,8
+ret
+
+label(frand5)
+frand5:
+  call frand1
+  push (float)0.5
+  fsub [esp]
+  add esp,4
+ret
+
+label(frandx)
+frandx:
+  call frand5
+  fmul [esp+4]
+ret
+
+
+
+label(record_victory_func) //(int player)
+record_victory_func:
+     push s_a
+     push s_filepath
+     call msvcrt.fopen
+     add esp,8
+       cmp eax,0
+       je record_victory_ret
+     lea ebp,[esp+4]
+     push eax
+
+      mov ecx,[ebp] //p
+      imul ebx,ecx,ps //p*
+    lea eax,[p0+p_name+ebx]
+    push eax
+    push s_winner_format
+    push tmpbuffer
+    call msvcrt.sprintf
+    add esp,C
+
+    push tmpbuffer
+    call msvcrt.strlen
+    add esp,4
+
+    push eax
+    push 1
+    push tmpbuffer
+    call msvcrt.fwrite
+    add esp,C
+
+    call msvcrt.fclose
+    add esp,4
+label(record_victory_ret)
+record_victory_ret:
+ret
+
+
+label(print_winners_func)
+print_winners_func:
+     push s_r
+     push s_filepath
+     call msvcrt.fopen
+     add esp,8
+       cmp eax,0
+       je print_winners_ret
+     push eax
+
+        push 0
+        push -1
+        push s_winners
+        push 0
+        call msg_func
+        add esp,10
+
+     push #8192
+     push 1
+     push tmpbuffer
+     call msvcrt.fread
+     add esp,C
+
+          pop ebp //FILE*
+mov esi,tmpbuffer
+label(print_winners_loop)
+print_winners_loop:
+             push eax
+             push esi
+
+        push ebp
+        push 0
+        push -1
+        push esi
+        push 0
+        call msg_func
+        add esp,10
+        pop ebp
+
+             pop esi
+             pop eax
+   add esi,#63
+   sub eax,#63
+ cmp eax,0
+ jg print_winners_loop
+
+     push ebp
+     call msvcrt.fclose
+     add esp,4
+label(print_winners_ret)
+print_winners_ret:
+ret
+
+
+label(generate_map_func)
+generate_map_func:
+
+mov ecx,v2_max
+xor ebx,ebx //v2*
+label(generate_map_v2init)
+generate_map_v2init:
+     mov [v20+v2_type+ebx],PLATFORM_STATIC
+     add ebx,v2s
+loop generate_map_v2init
+
+
+sub esp,4 //counter
+
+
+push (float)-1.0
+push (float)0.0
+push (float)0.0
+  push (float)0.0
+  push (float)1.0
+  push (float)0.0
+push (float)0.0
+push (float)0.0
+push (float)-1.0
+{push (float)0.0
+push (float)1.0
+push (float)0.0
+  push (float)0.0
+  push (float)0.0
+  push (float)1.0
+push (float)1.0
+push (float)0.0
+push (float)0.0}
+{push (float)0.5
+push (float)0.0
+push (float)-0.5
+  push (float)0.0
+  push (float)1.0
+  push (float)0.0
+push (float)0.5
+push (float)0.0
+push (float)-0.5}
+mov esi,esp
+
+
+push [spawn_points+8]
+push [spawn_points+4]
+push [spawn_points+0]
+mov edi,esp
+
+
+mov ecx,[platform_count]
+label(generate_map_platforms_loop)
+generate_map_platforms_loop:
+mov [esp+30],ecx
+            push esi
+            push edi
+   //push (float)3.9
+   //push (float)2.1
+   //push (float)2.1825
+   push [platform_step]
+   fld [esp]
+   add esp,4
+   fadd [edi+0]
+   fstp [edi+0]
+
+
+ push [edi+8]
+ push [edi+4]
+ push [edi+0]
+    pushad
+  push (float)6.0
+  call frandx
+  add esp,4
+  fadd [esp+28]
+  fstp [esp+28]
+    popad
+mov ebx,esp
+
+       pushad
+     call msvcrt.rand
+     and eax,3
+     add eax,1
+     mov [esp+1C],eax
+       popad
+   push eax
+push esi
+push 0
+push ebx
+push platform_cars
+call vehicle_spawn_func
+               //(type, *float[3] position, [*float[3] velocity], *float[9] orientation, color)
+add esp,14+C
+            pop edi
+            pop esi
+
+    pushad
+call msvcrt.rand
+and eax,3
+add eax,1
+mov [esp+18],eax //ecx
+    popad
+
+imul ebx,eax,v2s
+mov [v20+v2_type+ebx],ecx
+
+mov edx,[edi+0]
+  mov [v20+v2_pos+0+ebx],edx
+mov edx,[edi+4]
+  mov [v20+v2_pos+4+ebx],edx
+mov edx,[edi+8]
+  mov [v20+v2_pos+8+ebx],edx
+
+//-- phase ----
+    pushad
+  push ebx
+  call msvcrt.rand
+  and eax,#511
+  pop ebx
+  mov [v20+v2_phase+ebx],eax
+    popad
+//-- random torque ----
+         pushad
+    imul esi,eax,vs //v*
+    mov edx,[v0+v_pb+esi]
+    imul edx,pbs //pb*
+        //pitch
+           push edx
+             push (float)0.02
+             call frandx
+             add esp,4
+           pop edx
+             fadd [pb0+pb_torque+0+edx]
+             fstp [pb0+pb_torque+0+edx]
+        //roll
+           push edx
+             push (float)0.02
+             call frandx
+             add esp,4
+           pop edx
+             fadd [pb0+pb_torque+8+edx]
+             fstp [pb0+pb_torque+8+edx]
+         popad
+
+
+mov ecx,[esp+30]
+dec ecx
+  cmp ecx,0
+  jge generate_map_platforms_loop
+
+add esp,4+30
+
+ret
+
+
+
+label(count_team_members_func) //(int team, bool living_only)
+count_team_members_func:
+  lea ebp,[esp+4]
+  xor ecx,ecx //p
+  xor ebx,ebx //p*
+  xor edi,edi //count
+  label(count_team_members_loop)
+  count_team_members_loop:
+      cmp [p0+ebx],0
+        je count_team_members_next
+      cmp [p0+ebx],0
+        je count_team_members_next
+      mov eax,[ebp]
+      cmp [p0+p_team+ebx],eax
+        jne count_team_members_next
+
+      cmp [ebp+4],0
+      je count_team_members_count
+      cmp [p0+p_h+ebx],-1
+        je count_team_members_next
+
+      label(count_team_members_count)
+      count_team_members_count:
+         inc edi
+
+  label(count_team_members_next)
+  count_team_members_next:
+  add ebx,ps
+    inc ecx
+    cmp ecx,players_max
+    jle count_team_members_loop
+
+  mov eax,edi
+ret
+
+
+//=================== hooks =============
+
+label(join_spec_hook) //esi = p*
+join_spec_hook:
+   cmp [versus_allowrespawn],0
+     je join_spec_ret
+   cmp [game_state],2
+     jne join_spec_ret
+
+     push esi
+call msvcrt.rand
+and eax,1
+     pop esi
+
+mov [p0+p_team+esi],eax
+
+label(join_spec_ret)
+join_spec_ret:
+ret
+
+
+label(versus_respawn_hook)
+versus_respawn_hook:
+    lea ebp,[esp+24] //args: (float* position, float* rotation, int player_id)
+      mov edx,[ebp+8]
+      imul edx,ps //p*
+
+      mov edi,[p0+p_team+edx]
+      imul edi,spawn_point_size
+      mov esi,[ebp] //&amp;pos
+          mov eax,[spawn_points+0+edi]
+            mov [esi+0],eax
+          mov eax,[spawn_points+4+edi]
+            mov [esi+4],eax
+                 fld1
+                 fadd st(0)
+                 fadd st(0)
+                 fadd [esi+4]
+                 fstp [esi+4]
+          mov eax,[spawn_points+8+edi]
+            mov [esi+8],eax
+
+               pushad
+         //x
+             push (float)0.3
+             call frandx
+             add esp,4
+           mov esi,[esp+4]
+           fadd [esi+0]
+           fstp [esi+0]
+         //z
+             push (float)0.9
+             call frandx
+             add esp,4
+           mov esi,[esp+4]
+           fadd [esi+8]
+           fstp [esi+8]
+               popad
+ret
+
+
+
+label(fall_damage_hook) //esi = h*
+fall_damage_hook:
+   mov ebp,[h0+h_p+esi] //p
+   cmp ebp,-1
+     je fall_damage_ret
+   imul edx,ebp,ps //p*
+
+          push ebp
+          push edx
+     lea eax,[h0+h_pos+esi]
+     push eax
+     push 0
+     call spawn_explosion_particles_func
+     add esp,8
+          pop edx
+   mov edi,[p0+p_h+edx] //h
+     push edi
+     call human_remove_func
+     add esp,4
+
+          //pop ebp
+          call player_sync_func
+          add esp,4
+
+label(fall_damage_ret)
+fall_damage_ret:
+ret
+
+
+
+label(death_skip_hook)
+death_skip_hook:
+
+ push 1
+ push 0
+ call count_team_members_func
+ add esp,8
+    cmp eax,0
+    jg death_skip_spare
+
+ push 1
+ push 1
+ call count_team_members_func
+ add esp,8
+    cmp eax,0
+    jg death_skip_spare
+
+mov [game_timer],3C
+label(death_skip_spare)
+death_skip_spare:
+ret
+
+
+label(item_grab_hook) //ebp = h, edi = i. out eax
+item_grab_hook:
+  xor eax,eax
+     imul ebx,edi,is //i*
+     cmp [i0+i_type+ebx],#15 //briefcase
+       jne item_grab_ret
+
+     mov [i0+i_type+ebx],#16 //open briefcase
+
+     imul edx,ebp,hs //h*
+     mov esi,[h0+h_p+edx]
+       cmp esi,-1
+         je item_grab_ret
+     imul esi,ps //p*
+
+     mov ecx,[i0+i_pb+ebx]
+     imul ecx,pbs //pb*
+
+       //mons vault
+         push (float)1569.9
+         push (float)25.3
+         push (float)1658.0
+       //gold vault
+         push (float)565.7
+         push (float)25.3
+         push (float)1445.0
+      mov eax,[p0+p_team+esi]
+      imul eax,C
+      lea eax,[esp+eax]
+
+      mov edi,[eax+0] //tmp
+      mov [pb0+pb_pos+0+ecx],edi
+      mov edi,[eax+4]
+      mov [pb0+pb_pos+4+ecx],edi
+      mov edi,[eax+8]
+      mov [pb0+pb_pos+8+ecx],edi
+
+      add esp,C+C
+
+         mov [game_timer],0
+
+         push [h0+h_p+edx]
+         call record_victory_func
+         add esp,4
+
+  mov eax,1
+  label(item_grab_ret)
+  item_grab_ret:
+ret
+
+
+label(item_update_hook) //esi = i, ecx = i*
+item_update_hook:
+     cmp [i0+i_type+ecx],#15
+       jne item_update_ret
+
+    { mov eax,[game_timer]
+       shr eax,4
+       and eax,1
+       cmp eax,0
+       je item_update_ret}
+
+     mov edx,[i0+i_pb+ecx]
+     imul edx,pbs //pb*
+
+       fld [treasure_pos+0]
+         fstp [pb0+pb_pos+0+edx]
+       fld [treasure_pos+4]
+         fstp [pb0+pb_pos+4+edx]
+       fld [treasure_pos+8]
+         fstp [pb0+pb_pos+8+edx]
+       mov [pb0+pb_vel+0+edx],(float)0.0
+       mov [pb0+pb_vel+4+edx],(float)0.0
+       mov [pb0+pb_vel+8+edx],(float)0.0
+         mov [pb0+pb_torque+0+edx],(float)0.0
+         mov [pb0+pb_torque+4+edx],(float)0.0
+         mov [pb0+pb_torque+8+edx],(float)0.0
+
+     {//x
+          fild [game_timer]
+          fsin
+        fadd [treasure_pos+0]
+        fsub [pb0+pb_pos+0+edx]
+           push (float)0.04
+           fmul [esp]
+           add esp,4
+        fstp [pb0+pb_vel+0+edx]
+     //y
+        fld [treasure_pos+4]
+        fsub [pb0+pb_pos+4+edx]
+           push (float)0.04
+           fmul [esp]
+           add esp,4
+        //fadd [pb0+pb_pos+4+edx]
+        fstp [pb0+pb_vel+4+edx]
+        //fstp [pb0+pb_pos+4+edx]
+        //mov [pb0+pb_vel+4+edx],(float)0.0
+     //z
+          fild [game_timer]
+          fcos
+        fadd [treasure_pos+8]
+        fsub [pb0+pb_pos+8+edx]
+           push (float)0.04
+           fmul [esp]
+           add esp,4
+        fstp [pb0+pb_vel+8+edx]
+}
+label(item_update_ret)
+item_update_ret:
+ret
+
+
+label(enter_car_hook) //edi = h*, ecx = v
+enter_car_hook:
+     mov [h0+h_car+edi],-1
+ret
+
+
+
+label(state_12_hook)
+state_12_hook:
+      call generate_map_func
+      call print_winners_func
+ret
+
+
+label(vehicle_update_hook) //esi = v*, edx = v
+vehicle_update_hook:
+cmp [v0+esi],0
+  je vehicle_update_ret
+
+imul ebx,edx,v2s //v2*
+cmp [v20+v2_type+ebx],PLATFORM_NONE
+  je vehicle_update_ret
+
+   mov edi,[v0+v_pb+esi]
+   imul edi,pbs
+
+   mov [pb0+pb_vel+0+edi],(float)0.0
+   mov [pb0+pb_vel+4+edi],(float)0.0
+   mov [pb0+pb_vel+8+edi],(float)0.0
+
+   fld [v20+v2_pos+4+ebx]
+   fstp [pb0+pb_pos+4+edi]
+
+cmp [game_timer2],#64
+  jl vehicle_update_notstrafing
+cmp [v20+v2_type+ebx],PLATFORM_STRAFING
+  jne vehicle_update_notstrafing
+//---strafing
+
+mov eax,[game_timer]
+add eax,[v20+v2_phase+ebx]
+push eax
+push #64
+push (float)8.0
+     fild [esp+8]
+     fidiv [esp+4]
+     fsin
+     fmul [esp]
+add esp,C
+     fadd [v20+v2_pos+8+ebx]
+     fsub [pb0+pb_pos+8+edi]
+           push (float)0.004
+           fmul [esp]
+           add esp,4
+     fstp [pb0+pb_vel+8+edi]
+
+//---
+
+label(vehicle_update_notstrafing)
+vehicle_update_notstrafing:
+
+cmp [v20+v2_type+ebx],PLATFORM_FIXED
+  je vehicle_update_ret
+
+   mov [pb0+pb_torque+0+edi],(float)0.0
+   mov [pb0+pb_torque+4+edi],(float)0.0
+   mov [pb0+pb_torque+8+edi],(float)0.0
+
+label(vehicle_update_ret)
+vehicle_update_ret:
+ret
+
+
+label(pb_gravity_hook) //esi = pb*
+pb_gravity_hook:
+{
+   cmp [game_timer2],#10
+     jl pb_gravity_apply
+   cmp [game_timer2],#600
+     jg pb_gravity_ret
+label(pb_gravity_apply)
+pb_gravity_apply:
+
+   mov [pb0+pb_vel+0+esi],(float)0.0
+       push (float)0.9
+       fld [esp]
+       add esp,4
+       fmul [pb0+pb_vel+4+esi]
+       fstp [pb0+pb_vel+4+esi]
+   mov [pb0+pb_vel+8+esi],(float)0.0
+
+   mov [pb0+pb_torque+0+esi],(float)0.0
+   mov [pb0+pb_torque+4+esi],(float)0.0
+   mov [pb0+pb_torque+8+esi],(float)0.0
+}
+label(pb_gravity_ret)
+pb_gravity_ret:
+ret
+
+
+
+label(spawn_player_hook)
+spawn_player_hook:
+    lea ebp,[esp+24] //args: (float* position, float* rotation, int player_id)
+
+    mov ebx,[ebp+8] //p
+    imul edx,ebx,ps //p*
+
+                    pushad
+                push ebx
+                push edx
+              call msvcrt.rand
+              and eax,1
+                pop edx
+              mov [p0+p_suit_model+edx],eax
+                push edx
+              call msvcrt.rand
+              and eax,7
+                pop edx
+              mov [p0+p_suit_color+edx],eax
+                pop ebx
+
+                push ebx
+                call player_sync_func
+                add esp,4
+                    popad
+
+    mov edi,[p0+p_team+edx]
+    imul edi,spawn_point_size
+
+    mov esi,[ebp] //&amp;pos
+      mov eax,[spawn_points+0+edi]
+      mov [esi+0],eax
+      mov eax,[spawn_points+4+edi]
+      mov [esi+4],eax
+      mov eax,[spawn_points+8+edi]
+      mov [esi+8],eax
+
+         pushad
+       push 1
+       push [p0+p_team+edx]
+       call count_team_members_func
+         push eax
+         fild [esp]
+       add esp,C
+         popad
+                push (float)4.5
+                fmul [esp]
+                add esp,4
+              fadd [esi+8]
+              fstp [esi+8]
+
+
+
+//----- spawn car ----------------------
+                                      push ebp
+{
+push (float)-1.0
+push (float)0.0
+push (float)0.0
+  push (float)0.0
+  push (float)1.0
+  push (float)0.0
+push (float)0.0
+push (float)0.0
+push (float)-1.0
+}
+push (float)1.0
+push (float)0.0
+push (float)0.0
+  push (float)0.0
+  push (float)-1.0
+  push (float)0.0
+push (float)0.0
+push (float)0.0
+push (float)-1.0
+mov ecx,esp
+
+push [esi+8]
+push [esi+4]
+      fld1
+      fadd [esp]
+      fstp [esp]
+push [esi+0]
+mov eax,esp
+
+push 5
+push ecx
+push 0
+push eax
+push 0
+call vehicle_spawn_func
+               //(type, *float[3] position, [*float[3] velocity], *float[9] orientation, color)
+//add esp,14+30
+add esp,4
+pop esi
+add esp,C+30
+
+      imul eax,v2s
+      mov ecx,[esi+0]
+        mov [v20+v2_pos+0+eax],ecx
+      mov ecx,[esi+4]
+        mov [v20+v2_pos+4+eax],ecx
+      mov ecx,[esi+8]
+        mov [v20+v2_pos+8+eax],ecx
+
+{
+//----- spawn boxes --------------------
+push (float)0.0
+push (float)1.0
+push (float)0.0
+  push (float)0.0
+  push (float)0.0
+  push (float)1.0
+push (float)1.0
+push (float)0.0
+push (float)0.0
+mov ecx,esp
+
+push [spawn_points+8+edi]
+push [spawn_points+4+edi]
+      fld [esp]
+      fld1
+      fsub st(1)
+      fsub st(1)
+      fsub st(1)
+      fsubp
+      fstp [esp]
+push [spawn_points+0+edi]
+mov eax,esp
+
+                  sub esp,4 //counter
+push ecx
+push 0
+push eax
+push 24 //box
+
+mov ecx,#60
+label(spawn_player_boxes_loop)
+spawn_player_boxes_loop:
+mov [esp+10],ecx
+
+call item_spawn_func
+               //(int item_type, float *pos, [float* velocity], float *orientation)
+    mov eax,[esp+4]
+      fld [eax+4]
+        push (float)0.5
+          fsub [esp]
+        add esp,4
+      fstp [eax+4]
+
+mov ecx,[esp+10]
+loop spawn_player_boxes_loop
+
+add esp,14+30
+}
+
+                                     pop ebp
+    mov esi,[ebp] //&amp;pos
+      fld1
+      fadd st(0)
+      fadd st(0)
+      fadd [esi+4]
+      fstp [esi+4]
+
+ret
+
+
+//=================== injections ========
+
+//vehicle update
+
+alloc(newmem36,2048)
+label(returnhere36)
+label(originalcode36)
+label(exit36)
+
+newmem36:
+
+      pushad
+   mov edx,ebx
+   call vehicle_update_hook
+      popad
+
+originalcode36:
+cmp dword ptr [esi+subrosadedicated_36b.exe+81B23EC],00
+
+exit36:
+jmp returnhere36
+
+"subrosadedicated_36b.exe"+33B73:
+jmp newmem36
+nop 2
+returnhere36:
+
+//versus player spawn
+
+alloc(newmem1,2048)
+label(returnhere1)
+label(originalcode1)
+label(exit1)
+
+newmem1:
+           pushad
+      call spawn_player_hook
+           popad
+originalcode1:
+call subrosadedicated_36b.exe+7CE40
+
+exit1:
+jmp returnhere1
+
+"subrosadedicated_36b.exe"+8BB28:
+jmp newmem1
+returnhere1:
+
+//gravity
+
+alloc(newmem3,2048)
+label(returnhere3)
+label(originalcode3)
+label(exit3)
+
+newmem3:
+fstp dword ptr [esi+0C]
+           pushad
+   sub esi,8
+   sub esi,pb0
+   call pb_gravity_hook
+           popad
+originalcode3:
+//fstp dword ptr [esi+0C]
+lea edx,[esi+44]
+
+exit3:
+jmp returnhere3
+
+"subrosadedicated_36b.exe"+11083:
+jmp newmem3
+nop
+returnhere3:
+
+//state 1 -&gt; 2
+
+alloc(newmem15,2048)
+label(returnhere15)
+label(originalcode15)
+label(exit15)
+
+newmem15:
+      pushad
+   call state_12_hook
+      popad
+originalcode15:
+mov [subrosadedicated_36b.exe+8F7A464],00000002
+
+exit15:
+jmp returnhere15
+
+"subrosadedicated_36b.exe"+8BD3D:
+jmp newmem15
+nop 5
+returnhere15:
+
+
+//entering cars
+
+alloc(newmem45,2048)
+label(returnhere45)
+label(originalcode45)
+label(exit45)
+
+newmem45:
+mov [edi+subrosadedicated_36b.exe+5CC3E8],ecx
+       pushad
+   call enter_car_hook
+       popad
+originalcode45:
+//mov [edi+subrosadedicated_36b.exe+5CC3E8],ecx
+
+exit45:
+jmp returnhere45
+
+"subrosadedicated_36b.exe"+66EE7:
+jmp newmem45
+nop
+returnhere45:
+
+
+
+//item update
+
+alloc(newmem66,2048)
+label(returnhere66)
+label(originalcode66)
+label(exit66)
+
+newmem66:
+          pushad
+   mov esi,ecx
+   mov ecx,eax
+   call item_update_hook
+          popad
+originalcode66:
+cmp dword ptr [eax+subrosadedicated_36b.exe+90331F0],0F
+
+exit66:
+jmp returnhere66
+
+"subrosadedicated_36b.exe"+7F7DA:
+jmp newmem66
+nop 2
+returnhere66:
+
+
+//item grab
+
+alloc(newmem78,2048)
+label(returnhere78)
+label(originalcode78)
+label(exit78)
+
+newmem78:
+          pushad
+   call item_grab_hook
+   mov [esp+1C],eax
+          popad
+   cmp eax,0
+   jne exit78
+
+originalcode78:
+call subrosadedicated_36b.exe+A600
+
+exit78:
+jmp returnhere78
+
+"subrosadedicated_36b.exe"+4A734:
+jmp newmem78
+returnhere78:
+
+//team death skip
+//subrosadedicated_36b.exe+8C099:
+//db 90 90  90 90 90 90  90 90 90 90
+
+alloc(newmem91,2048)
+label(returnhere91)
+label(originalcode91)
+label(exit91)
+
+newmem91:
+    pushad
+  call death_skip_hook
+    popad
+originalcode91:
+//mov [subrosadedicated_36b.exe+8F7A46C],0000003C
+
+exit91:
+jmp returnhere91
+
+"subrosadedicated_36b.exe"+8C099:
+jmp newmem91
+nop 5
+returnhere91:
+
+//fall damage
+
+alloc(newmem105,2048)
+label(returnhere105)
+label(originalcode105)
+label(exit105)
+
+newmem105:
+           pushad
+      call fall_damage_hook
+           popad
+originalcode105:
+jmp subrosadedicated_36b.exe+8FDD8
+
+exit105:
+jmp returnhere105
+
+"subrosadedicated_36b.exe"+8FCEB:
+jmp newmem105
+returnhere105:
+
+
+
+//versus respawn
+
+alloc(newmem120,2048)
+label(returnhere120)
+label(originalcode120)
+label(exit120)
+
+newmem120:
+        pushad
+    call versus_respawn_hook
+        popad
+originalcode120:
+call subrosadedicated_36b.exe+7CE40
+
+exit120:
+jmp returnhere120
+
+"subrosadedicated_36b.exe"+8BEEE:
+jmp newmem120
+returnhere120:
+
+
+//set team to spec on join
+
+alloc(newmem136,2048)
+label(returnhere136)
+label(originalcode136)
+label(exit136)
+
+newmem136:
+          pushad
+   call join_spec_hook
+          popad
+originalcode136:
+//mov [esi+subrosadedicated_36b.exe+13AFCEDC],00000007
+
+exit136:
+jmp returnhere136
+
+"subrosadedicated_36b.exe"+34584:
+jmp newmem136
+nop 5
+returnhere136:
+
+
+
+
+//state 3 time
+subrosadedicated_36b.exe+8C0D2:
+mov [subrosadedicated_36b.exe+8F7A46C],#400
+ 
+[DISABLE]
+dealloc(newmem136)
+"subrosadedicated_36b.exe"+34584:
+mov [esi+subrosadedicated_36b.exe+13AFCEDC],00000007
+//Alt: db C7 86 DC CE 4C 14 07 00 00 00
+dealloc(newmem120)
+"subrosadedicated_36b.exe"+8BEEE:
+call subrosadedicated_36b.exe+7CE40
+//Alt: db E8 4D 0F FF FF
+dealloc(newmem105)
+"subrosadedicated_36b.exe"+8FCEB:
+jmp subrosadedicated_36b.exe+8FDD8
+//Alt: db E9 E8 00 00 00
+dealloc(newmem91)
+"subrosadedicated_36b.exe"+8C099:
+mov [subrosadedicated_36b.exe+8F7A46C],0000003C
+//Alt: db C7 05 6C A4 DD 09 3C 00 00 00
+dealloc(newmem78)
+"subrosadedicated_36b.exe"+4A734:
+call subrosadedicated_36b.exe+A600
+//Alt: db E8 C7 FE FB FF
+dealloc(newmem66)
+"subrosadedicated_36b.exe"+7F7DA:
+cmp dword ptr [eax+subrosadedicated_36b.exe+90331F0],0F
+//Alt: db 83 B8 F0 31 D2 09 0F
+dealloc(newmem55)
+"subrosadedicated_36b.exe"+721FC:
+mov ecx,[ecx+subrosadedicated_36b.exe+90331F0]
+//Alt: db 8B 89 F0 31 D2 09
+dealloc(newmem45)
+"subrosadedicated_36b.exe"+66EE7:
+mov [edi+subrosadedicated_36b.exe+5CC3E8],ecx
+//Alt: db 89 8F E8 C3 2B 01
+dealloc(newmem36)
+"subrosadedicated_36b.exe"+33B73:
+cmp dword ptr [esi+subrosadedicated_36b.exe+81B23EC],00
+//Alt: db 83 BE EC 23 EA 08 00
+dealloc(newmem28)
+"subrosadedicated_36b.exe"+31141:
+mov eax,[ebx+subrosadedicated_36b.exe+81B23E4]
+//Alt: db 8B 83 E4 23 EA 08
+dealloc(newmem21)
+"subrosadedicated_36b.exe"+82F5E:
+mov eax,[esi+subrosadedicated_36b.exe+81B23E4]
+//Alt: db 8B 86 E4 23 EA 08
+dealloc(newmem15)
+"subrosadedicated_36b.exe"+8BD3D:
+mov [subrosadedicated_36b.exe+8F7A464],00000002
+//Alt: db C7 05 64 A4 C6 09 02 00 00 00
+dealloc(newmem10)
+"subrosadedicated_36b.exe"+2D57E:
+cmp dword ptr [ebp+subrosadedicated_36b.exe+81B23E0],00
+//Alt: db 83 BD E0 23 EA 08 00
+dealloc(newmem6)
+"subrosadedicated_36b.exe"+628CE:
+fstp dword ptr [esi+40]
+fld dword ptr [esi+3C]
+//Alt: db D9 5E 40 D9 46 3C
+dealloc(newmem3)
+"subrosadedicated_36b.exe"+11083:
+fstp dword ptr [esi+0C]
+lea edx,[esi+44]
+//Alt: db D9 5E 0C 8D 56 44
+dealloc(newmem1)
+"subrosadedicated_36b.exe"+8BB28:
+call subrosadedicated_36b.exe+7CE40
+//Alt: db E8 13 13 FF FF
+
+subrosadedicated_36b.exe+8C0D2:
+mov [subrosadedicated_36b.exe+8F7A46C],000002D0
+
+subrosadedicated_36b.exe+8C099:
+mov [subrosadedicated_36b.exe+8F7A46C],0000003C
+
+
+dealloc(mycode)
+dealloc(mydata)
+dealloc(tmpbuffer)
+dealloc(strings)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>14</ID>
+          <Description>"reflective damage 10/31"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(reflective_crime_threshold,#100)
+define(reflective_crime_threshold_apply_guns,#200)
+define(reflective_crime_threshold_apply_cars,#300)
+
+
+//-----------------------------------
+
+
+define(p0,subrosadedicated_36b.exe+13AFCE60)
+define(p_name,4)
+define(p_phone,30)
+define(p_crime,54)
+define(p_team,7C)
+define(p_h,90)
+define(ps,3824)
+define(players_max,#255)
+
+define(h0,subrosadedicated_36b.exe+5CC3C8)
+define(h_p,8)
+define(h_car,20)
+define(h_seat,24)
+define(h_health,34)
+define(h_spawn_timer,48)
+define(h_pos,78)
+define(hs,3748)
+
+define(bt0,subrosadedicated_36b.exe+24F860)
+define(b_type,0)
+define(b_owner_p,8)
+define(b_vel,2C)
+define(bs,5C)
+
+define(v0,subrosadedicated_36b.exe+81B23E0)
+define(v_last_driver_p,14)
+define(vs,5044)
+
+define(player_create_func,subrosadedicated_36b.exe+34530)
+define(human_spawn_func,subrosadedicated_36b.exe+7CE40)
+               //(float* position, float* rotation, int player_id)
+define(vehicle_spawn_func,subrosadedicated_36b.exe+4E940)
+               //(type, *float[3] position, [*float[3] velocity], *float[9] orientation, color)
+define(arm_func,subrosadedicated_36b.exe+544A0)
+define(msg_func,subrosadedicated_36b.exe+7700)
+define(apply_damage_func,subrosadedicated_36b.exe+9130)
+
+[ENABLE]
+
+
+
+
+
+//-------------
+
+alloc(mycode,4096)
+mycode:
+
+label(damage_hook_func) //ebp = args (h, bp, 0, hp), esi = bullet*
+damage_hook_func:
+
+mov ecx,[ebp+0] //h_dst
+imul ebx,ecx,hs //h_dst*
+
+mov edx,[h0+h_p+ebx] //p_dst
+cmp edx,-1
+  je damage_ret
+imul esi,edx,ps //p_dst*
+cmp [p0+p_team+esi],7
+  jne damage_ret
+cmp [h0+h_spawn_timer+ebx],#10
+  jle damage_ret
+
+mov edi,[bt0+b_owner_p+esi]
+  cmp edi,-1
+    je damage_ret
+imul edi,ps //p_src*
+  cmp [p0+p_crime+edi],reflective_crime_threshold
+    jle damage_ret
+
+//----- reflect damage ------
+
+mov eax,[p0+p_h+edi] //h_src
+  cmp eax,-1
+    je damage_ret
+  cmp eax,ecx
+    je damage_ret
+
+  push (float)0.2
+  fild [ebp+C]
+  fmul [esp]
+  fistp [ebp+C] //hp *= 0.5
+  add esp,4
+
+      cmp [p0+p_crime+edx],reflective_crime_threshold_apply_guns
+        jle dmg_src_skip
+             pushad
+         push [ebp+C]
+         push [ebp+8]
+         push [ebp+4]
+         push [ebp+0]
+         call apply_damage_func
+         add esp,10
+             popad
+      label(dmg_src_skip)
+      dmg_src_skip:
+
+mov [ebp+0],eax //h_dst = h_src
+
+label(damage_ret)
+damage_ret:
+ret
+
+
+label(runover_hook_func) //ebx = v*, esi = h_dst*, returns 1 if canceled
+runover_hook_func:
+xor eax,eax
+    cmp [h0+h_health+esi],0
+      jle runover_ret
+
+    mov ebp,[h0+h_p+esi]
+      cmp ebp,-1
+        je runover_ret
+      cmp [h0+h_spawn_timer+esi],#10
+        jle runover_ret
+
+    mov ecx,[v0+v_last_driver_p+ebx] //p_src
+      cmp ecx,-1
+        je runover_ret
+    imul edx,ecx,ps //p_src*
+      cmp [p0+edx],0
+        je runover_ret
+      cmp [p0+p_crime+edx],reflective_crime_threshold
+        jle runover_ret
+    mov edi,[p0+p_h+edx] //h_src
+      cmp edi,-1
+        je runover_ret
+      imul edx,edi,hs //h_src*
+      mov edx,[h0+h_car+edx]
+      imul edx,vs
+      cmp edx,ebx
+      jne runover_ret
+
+           push edi
+           imul edi,hs
+           mov [h0+h_health+edi],0
+           pop edi
+
+       {push #10
+       push 0
+       push 3
+       push edi
+       call apply_damage_func
+       add esp,10}
+
+         imul ebp,ps
+         cmp [p0+p_crime+ebp],reflective_crime_threshold_apply_cars
+         jg runover_ret
+
+       mov eax,1
+
+label(runover_ret)
+runover_ret:
+ret
+
+
+
+
+
+//------- apply damage func --------
+
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem:
+              pushad
+//esi = bullet*
+lea ebp,[esp+20]
+call damage_hook_func
+              popad
+originalcode:
+call subrosadedicated_36b.exe+9130
+
+exit:
+jmp returnhere
+
+"subrosadedicated_36b.exe"+64BA2:
+jmp newmem
+returnhere:
+
+//------- getting run over ----------
+
+alloc(newmem2,2048)
+label(returnhere2)
+label(originalcode2)
+label(exit2)
+
+newmem2:
+     pushad
+//ebx = v*
+//esi = h_dst*
+call runover_hook_func
+mov [esp+1C],eax
+     popad
+cmp eax,1
+  je exit2
+originalcode2:
+add dword ptr [esi+subrosadedicated_36b.exe+5CC3FC],-78
+
+exit2:
+jmp returnhere2
+
+"subrosadedicated_36b.exe"+7D7ED:
+jmp newmem2
+nop 2
+returnhere2:
+
+ 
+ 
+[DISABLE]
+dealloc(newmem2)
+"subrosadedicated_36b.exe"+7D7ED:
+add dword ptr [esi+subrosadedicated_36b.exe+5CC3FC],-78
+//Alt: db 83 86 FC C3 92 01 88
+dealloc(newmem)
+"subrosadedicated_36b.exe"+64BA2:
+call subrosadedicated_36b.exe+9130
+//Alt: db E8 89 45 FA FF
+
+dealloc(mycode)
+
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>48</ID>
+          <Description>"nerf traffic"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(traffic,#40)
+
+
+[ENABLE]
+
+
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem:
+
+  mov [esp+4],traffic
+
+originalcode:
+sub esp,0C
+cmp dword ptr [subrosadedicated_36b.exe+133BDB6C],00
+
+exit:
+jmp returnhere
+
+"subrosadedicated_36b.exe"+773D0:
+jmp newmem
+nop 5
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+dealloc(newmem)
+"subrosadedicated_36b.exe"+773D0:
+sub esp,0C
+cmp dword ptr [subrosadedicated_36b.exe+133BDB6C],00
+//Alt: db 83 EC 0C 83 3D 6C DB 44 14 00
+
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>24</ID>
+          <Description>"whitelist.txt"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(acnt0,subrosadedicated_36b.exe+17B0DAE8)
+define(acnt_steam,10)
+define(acnt_name,18)
+define(acnt_cash,3C)
+define(acnt_ban,64)
+define(acnt_phone,0C)
+define(acnt_crime,44)
+define(acnts,70)
+
+[ENABLE]
+
+alloc(tmpbuffer,4096)
+
+alloc(strings,2048)
+strings:
+label(s_filepath)
+s_filepath:
+db 'w' 'h' 'i' 't' 'e' 'l' 'i' 's' 't' '.' 't' 'x' 't' 0
+label(s_r)
+s_r:
+db 'r' 0
+label(s_newline)
+s_newline:
+db D A 0
+label(s_fi)
+s_fi:
+db '%' 'i' 0
+
+
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //ecx = acnt*
+   pushad
+
+push s_r
+push s_filepath
+call msvcrt.fopen
+add esp,8
+  cmp eax,0
+  je authcheck_approve
+push eax
+
+push #4096
+push 1
+push tmpbuffer
+call msvcrt.fread
+add esp,C
+  mov [tmpbuffer+eax],#2573 //0D 0A 00 00
+
+call msvcrt.fclose
+add esp,4
+
+
+push s_newline
+push tmpbuffer
+call msvcrt.strtok
+add esp,8
+  cmp eax,0
+  je authcheck_approve
+
+label(lines_loop)
+lines_loop:
+
+push eax
+call msvcrt.atoi
+add esp,4
+
+mov ecx,[esp+18] //acnt*
+cmp eax,[ecx+acnt0+acnt_phone]
+  je authcheck_approve
+
+push s_newline
+push 0
+call msvcrt.strtok
+add esp,8
+  cmp eax,0
+  jne lines_loop
+
+label(authcheck_dismiss)
+authcheck_dismiss:
+   popad
+jmp subrosadedicated_36b.exe+78A59
+
+label(authcheck_approve)
+authcheck_approve:
+   popad
+
+originalcode:
+cmp dword ptr [ecx+subrosadedicated_36b.exe+17B0DB4C],00
+  //jle subrosadedicated_36b.exe+78A68
+
+
+exit:
+jmp returnhere
+
+"subrosadedicated_36b.exe"+78A50:
+jmp newmem
+nop 2
+returnhere:
+
+
+
+ 
+[DISABLE]
+dealloc(newmem)
+"subrosadedicated_36b.exe"+78A50:
+cmp dword ptr [ecx+subrosadedicated_36b.exe+17B0DB4C],00
+//Alt: db 83 B9 4C DB CA 18 00
+
+dealloc(tmpbuffer)
+dealloc(strings)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>60</ID>
+          <Description>"no fall damage"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+
+subrosadedicated_36b.exe+8FCE4:
+db 90 90  90 90 90 90  90
+ 
+[DISABLE]
+
+subrosadedicated_36b.exe+8FCE4:
+add dword ptr [esi+subrosadedicated_36b.exe+5CC3FC],-78
+
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>39</ID>
+          <Description>"add fake player (goldmen)"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(team,0)
+
+
+
+//---------------------
+
+define(p0,subrosadedicated_36b.exe+13AFCE60)
+define(p_name,4)
+define(p_acc,3C)
+define(p_ready,48)
+define(p_team,7C)
+define(p_h,90)
+define(ps,3824)
+define(players_max,#255)
+
+define(create_player_func,subrosadedicated_36b.exe+34530)
+define(player_sync_func,subrosadedicated_36b.exe+78C0)
+
+[ENABLE]
+
+alloc(mycode,2048)
+mycode:
+
+call create_player_func
+
+imul ebx,eax,ps
+mov [p0+p_name+ebx],#6451042 //"bob"
+mov [p0+p_team+ebx],team
+mov [p0+p_acc+ebx],-1
+mov [p0+p_ready+ebx],1
+
+push eax
+call player_sync_func
+add esp,4
+
+ret
+createthread(mycode)
+
+[DISABLE]
+
+dealloc(mycode)
+
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>41</ID>
+              <Description>"add fake player (mons)"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>define(team,1)
+
+
+
+//---------------------
+
+define(p0,subrosadedicated_36b.exe+13AFCE60)
+define(p_name,4)
+define(p_acc,3C)
+define(p_ready,48)
+define(p_team,7C)
+define(p_h,90)
+define(ps,3824)
+define(players_max,#255)
+
+define(create_player_func,subrosadedicated_36b.exe+34530)
+define(player_sync_func,subrosadedicated_36b.exe+78C0)
+
+[ENABLE]
+
+alloc(mycode,2048)
+mycode:
+
+call create_player_func
+
+imul ebx,eax,ps
+mov [p0+p_name+ebx],#6451042 //"bob"
+mov [p0+p_team+ebx],team
+mov [p0+p_acc+ebx],-1
+mov [p0+p_ready+ebx],1
+
+push eax
+call player_sync_func
+add esp,4
+
+ret
+createthread(mycode)
+
+[DISABLE]
+
+dealloc(mycode)
+
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>43</ID>
+              <Description>"add fake player (oxs)"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>define(team,2)
+
+
+
+//---------------------
+
+define(p0,subrosadedicated_36b.exe+13AFCE60)
+define(p_name,4)
+define(p_acc,3C)
+define(p_ready,48)
+define(p_cash,4C)
+define(p_team,7C)
+define(p_h,90)
+define(ps,3824)
+define(players_max,#255)
+
+define(create_player_func,subrosadedicated_36b.exe+34530)
+define(player_sync_func,subrosadedicated_36b.exe+78C0)
+
+[ENABLE]
+
+alloc(mycode,2048)
+mycode:
+
+call create_player_func
+
+imul ebx,eax,ps
+mov [p0+p_name+ebx],#6451042 //"bob"
+mov [p0+p_team+ebx],team
+mov [p0+p_acc+ebx],-1
+mov [p0+p_ready+ebx],1
+mov [p0+p_cash+ebx],#1000
+
+push eax
+call player_sync_func
+add esp,4
+
+ret
+createthread(mycode)
+
+[DISABLE]
+
+dealloc(mycode)
+
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>44</ID>
+              <Description>"add fake player (nexaco)"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>define(team,3)
+
+
+
+//---------------------
+
+define(p0,subrosadedicated_36b.exe+13AFCE60)
+define(p_name,4)
+define(p_acc,3C)
+define(p_ready,48)
+define(p_team,7C)
+define(p_h,90)
+define(ps,3824)
+define(players_max,#255)
+
+define(create_player_func,subrosadedicated_36b.exe+34530)
+define(player_sync_func,subrosadedicated_36b.exe+78C0)
+
+[ENABLE]
+
+alloc(mycode,2048)
+mycode:
+
+call create_player_func
+
+imul ebx,eax,ps
+mov [p0+p_name+ebx],#6451042 //"bob"
+mov [p0+p_team+ebx],team
+mov [p0+p_acc+ebx],-1
+mov [p0+p_ready+ebx],1
+
+push eax
+call player_sync_func
+add esp,4
+
+ret
+createthread(mycode)
+
+[DISABLE]
+
+dealloc(mycode)
+
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>45</ID>
+              <Description>"add fake player (pentacom)"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>define(team,4)
+
+
+
+//---------------------
+
+define(p0,subrosadedicated_36b.exe+13AFCE60)
+define(p_name,4)
+define(p_acc,3C)
+define(p_ready,48)
+define(p_team,7C)
+define(p_h,90)
+define(ps,3824)
+define(players_max,#255)
+
+define(create_player_func,subrosadedicated_36b.exe+34530)
+define(player_sync_func,subrosadedicated_36b.exe+78C0)
+
+[ENABLE]
+
+alloc(mycode,2048)
+mycode:
+
+call create_player_func
+
+imul ebx,eax,ps
+mov [p0+p_name+ebx],#6451042 //"bob"
+mov [p0+p_team+ebx],team
+mov [p0+p_acc+ebx],-1
+mov [p0+p_ready+ebx],1
+
+push eax
+call player_sync_func
+add esp,4
+
+ret
+createthread(mycode)
+
+[DISABLE]
+
+dealloc(mycode)
+
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>40</ID>
+              <Description>"remove fake players"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>define(p0,subrosadedicated_36b.exe+13AFCE60)
+define(p_name,4)
+define(p_acc,3C)
+define(p_ready,48)
+define(p_team,7C)
+define(p_h,90)
+define(ps,3824)
+define(players_max,#255)
+
+define(create_player_func,subrosadedicated_36b.exe+34530)
+define(player_sync_func,subrosadedicated_36b.exe+78C0)
+define(remove_player_func,subrosadedicated_36b.exe+FCB0)
+
+[ENABLE]
+
+alloc(mycode,2048)
+mycode:
+
+xor ecx,ecx
+xor ebx,ebx
+label(players_loop)
+players_loop:
+  cmp [p0+ebx],0
+    je players_next
+  cmp [p0+p_team+ebx],6
+    je players_next
+  cmp [p0+p_acc+ebx],-1
+    jne players_next
+
+    pushad
+ push ecx
+ call remove_player_func
+ add esp,4
+    popad
+
+label(players_next)
+players_next:
+add ebx,ps
+inc ecx
+cmp ecx,players_max
+jl players_loop
+
+ret
+createthread(mycode)
+
+[DISABLE]
+
+dealloc(mycode)
+
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>67</ID>
+      <Description>"----- misc -----"</Description>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>53</ID>
+          <Description>"gravity"</Description>
+          <VariableType>Float</VariableType>
+          <Address>subrosadedicated_36b.exe+9470C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>21</ID>
+          <Description>"train color"</Description>
+          <VariableType>Byte</VariableType>
+          <Address>subrosadedicated_36b.exe+527A6</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>3</ID>
+      <Description>"---- structs ----"</Description>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>2</ID>
+          <Description>"player"</Description>
+          <VariableType>4 Bytes</VariableType>
+          <Address>subrosadedicated_36b.exe+13AFCE60+3824*0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>7</ID>
+          <Description>"human"</Description>
+          <VariableType>4 Bytes</VariableType>
+          <Address>subrosadedicated_36b.exe+5CC3C8+3748*0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>9</ID>
+          <Description>"vehicle"</Description>
+          <VariableType>4 Bytes</VariableType>
+          <Address>subrosadedicated_36b.exe+81B23E0+5044*0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>13</ID>
+          <Description>"bullet"</Description>
+          <VariableType>4 Bytes</VariableType>
+          <Address>subrosadedicated_36b.exe+24F860</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>42</ID>
+          <Description>"item"</Description>
+          <VariableType>4 Bytes</VariableType>
+          <Address>subrosadedicated_36b.exe+90331E0+250*0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>46</ID>
+          <Description>"body"</Description>
+          <VariableType>4 Bytes</VariableType>
+          <Address>subrosadedicated_36b.exe+9B950+AC*0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>49</ID>
+          <Description>"corp"</Description>
+          <VariableType>4 Bytes</VariableType>
+          <Address>subrosadedicated_36b.exe+8F7A54C+5A7C*0</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+  <Structures StructVersion="2">
+    <Structure Name="player" AutoFill="0" AutoCreate="1" DefaultHex="0" AutoDestroy="0" DoNotSaveLocal="0" RLECompression="1" AutoCreateStructsize="4096">
+      <Elements>
+        <Element Offset="0" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4" Vartype="String" Bytesize="21" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="25" Vartype="Byte" Bytesize="1" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="28" Vartype="4 Bytes" Bytesize="4" RLECount="5" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="48" Vartype="4 Bytes" Bytesize="4" Description="phone" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="52" Vartype="4 Bytes" Bytesize="4" RLECount="23" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="144" Vartype="4 Bytes" Bytesize="4" Description="h" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="148" Vartype="4 Bytes" Bytesize="4" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="164" Vartype="Float" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="176" Vartype="4 Bytes" Bytesize="4" RLECount="32" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="304" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="312" Vartype="4 Bytes" Bytesize="4" RLECount="3433" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="14044" Vartype="Float" Bytesize="4" RLECount="7" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="14072" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="14076" Vartype="Float" Bytesize="4" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="14092" Vartype="4 Bytes" Bytesize="4" RLECount="37" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="14240" Vartype="4 Bytes" Bytesize="4" Description="skin color" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="14244" Vartype="4 Bytes" Bytesize="4" Description="hair color" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="14248" Vartype="4 Bytes" Bytesize="4" Description="hair type" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="14252" Vartype="4 Bytes" Bytesize="4" Description="eye color?" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="14256" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="14260" Vartype="4 Bytes" Bytesize="4" Description="suit color" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="14264" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="14272" Vartype="4 Bytes" Bytesize="4" Description="head type" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="14276" Vartype="4 Bytes" Bytesize="4" RLECount="24" DisplayMethod="Unsigned Integer"/>
+      </Elements>
+    </Structure>
+    <Structure Name="human" AutoFill="0" AutoCreate="1" DefaultHex="0" AutoDestroy="0" DoNotSaveLocal="0" RLECompression="1" AutoCreateStructsize="4096">
+      <Elements>
+        <Element Offset="0" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="8" Vartype="4 Bytes" Bytesize="4" Description="p" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12" Vartype="4 Bytes" Bytesize="4" RLECount="27" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="120" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="124" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="128" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="132" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="140" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="148" Vartype="4 Bytes" Bytesize="4" RLECount="30" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="268" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="276" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="280" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="288" Vartype="Float" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="300" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="304" Vartype="4 Bytes" Bytesize="4" RLECount="28" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="416" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="420" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="424" Vartype="Float" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="432" Vartype="String" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="436" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="440" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="444" Vartype="Byte" Bytesize="1" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="445" Vartype="String" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="449" Vartype="Byte" Bytesize="1" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="452" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="456" Vartype="Byte" Bytesize="1" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="459" Vartype="2 Bytes" Bytesize="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="461" Vartype="Byte" Bytesize="1" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="464" Vartype="4 Bytes" Bytesize="4" RLECount="13" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="516" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="520" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="524" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="528" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="532" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="536" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="540" Vartype="Byte" Bytesize="1" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="544" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="548" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="552" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="564" Vartype="Float" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="572" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="576" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="580" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="584" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="588" Vartype="Float" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="600" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="604" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="608" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="612" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="624" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="628" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="632" Vartype="Float" Bytesize="4" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="648" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="652" Vartype="Byte" Bytesize="1" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="654" Vartype="2 Bytes" Bytesize="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="656" Vartype="Byte" Bytesize="1" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="660" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="664" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="668" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="672" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="676" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="680" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="688" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="696" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="704" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="712" Vartype="4 Bytes" Bytesize="4" RLECount="16" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="776" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="780" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="784" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="788" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="792" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="796" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="800" Vartype="4 Bytes" Bytesize="4" RLECount="7" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="828" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="832" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="836" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="840" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="844" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="848" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="852" Vartype="Byte" Bytesize="1" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="856" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="860" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="864" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="876" Vartype="Float" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="884" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="888" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="892" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="896" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="900" Vartype="Float" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="912" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="916" Vartype="Float" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="924" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="936" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="940" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="944" Vartype="Float" Bytesize="4" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="960" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="964" Vartype="Byte" Bytesize="1" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="966" Vartype="2 Bytes" Bytesize="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="968" Vartype="Byte" Bytesize="1" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="972" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="976" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="980" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="984" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="988" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="992" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1000" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1008" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1016" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1024" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1028" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1032" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1036" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1040" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1044" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Hexadecimal"/>
+        <Element Offset="1052" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1060" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1064" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="1068" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1072" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1076" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1088" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1092" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1096" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1100" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1104" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1108" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1112" Vartype="4 Bytes" Bytesize="4" RLECount="7" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1140" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1144" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1148" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1152" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1156" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1160" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1164" Vartype="Byte" Bytesize="1" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1168" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1172" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1176" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1188" Vartype="Float" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1196" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1200" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1204" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1208" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1212" Vartype="Float" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1224" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1228" Vartype="Float" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1236" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1248" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1252" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1256" Vartype="Float" Bytesize="4" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1272" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1276" Vartype="Byte" Bytesize="1" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1278" Vartype="2 Bytes" Bytesize="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1280" Vartype="Byte" Bytesize="1" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1284" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1288" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1292" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1296" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1300" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1304" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1312" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1320" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1328" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1336" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1340" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1344" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1348" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1352" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1356" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Hexadecimal"/>
+        <Element Offset="1364" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1372" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1376" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="1380" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1384" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1388" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1400" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1404" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1408" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1412" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1416" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1420" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1424" Vartype="4 Bytes" Bytesize="4" RLECount="7" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1452" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1456" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1460" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1464" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1468" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1472" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1476" Vartype="Byte" Bytesize="1" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1480" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1484" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1488" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1500" Vartype="Float" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1508" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1512" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1516" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1520" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1524" Vartype="Float" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1536" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1540" Vartype="Float" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1548" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1560" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1564" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1568" Vartype="Float" Bytesize="4" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1584" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1588" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1592" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1596" Vartype="Byte" Bytesize="1" RLECount="12" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1608" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1612" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1616" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1624" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1632" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1640" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1648" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1652" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1656" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1660" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1664" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1668" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Hexadecimal"/>
+        <Element Offset="1676" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1684" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1688" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="1692" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1696" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1700" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1712" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1716" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1720" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1724" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1728" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1732" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1736" Vartype="4 Bytes" Bytesize="4" RLECount="7" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1764" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1768" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1772" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1776" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1780" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1784" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1788" Vartype="Byte" Bytesize="1" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1792" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1796" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1800" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1812" Vartype="Float" Bytesize="4" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1828" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1832" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1836" Vartype="Float" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1848" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1852" Vartype="Float" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1860" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1872" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1876" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1880" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1884" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1888" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1892" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1896" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1900" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1904" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1908" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1912" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1916" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1920" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1924" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1928" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1936" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1944" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1952" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1960" Vartype="Float" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1968" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1972" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1976" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="1980" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Hexadecimal"/>
+        <Element Offset="1992" Vartype="Double" Bytesize="8" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2008" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2012" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2024" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2028" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2032" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2036" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2040" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2044" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2048" Vartype="4 Bytes" Bytesize="4" RLECount="7" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2076" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2080" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2084" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2088" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2092" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2096" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2100" Vartype="Byte" Bytesize="1" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2104" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2108" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2112" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2124" Vartype="Float" Bytesize="4" RLECount="9" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2160" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2164" Vartype="Float" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2172" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2184" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2188" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2192" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2196" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2200" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2204" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2208" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2212" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2216" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2220" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2224" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2228" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2232" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2236" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2240" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2248" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2256" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2264" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2272" Vartype="Float" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2280" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2284" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2288" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2292" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Hexadecimal"/>
+        <Element Offset="2300" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2308" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2312" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="2316" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2320" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2324" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2336" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2340" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2344" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2348" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2352" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2356" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2360" Vartype="4 Bytes" Bytesize="4" RLECount="7" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2388" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2392" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2396" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2400" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2404" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2408" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2412" Vartype="Byte" Bytesize="1" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2416" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2420" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2424" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2436" Vartype="Float" Bytesize="4" RLECount="9" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2472" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2476" Vartype="Float" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2484" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2496" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2500" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2504" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2508" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2512" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2516" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2520" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2524" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2528" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2532" Vartype="Float" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2544" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2548" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2552" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2560" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2568" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2576" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2584" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2588" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2592" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2596" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2600" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2604" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Hexadecimal"/>
+        <Element Offset="2612" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2620" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2624" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="2628" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2632" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2636" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2648" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2652" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2656" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2660" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2664" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2668" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2672" Vartype="4 Bytes" Bytesize="4" RLECount="7" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2700" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2704" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2708" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2712" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2716" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2720" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2724" Vartype="Byte" Bytesize="1" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2728" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2732" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2736" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2748" Vartype="Float" Bytesize="4" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2764" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2768" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2772" Vartype="Float" Bytesize="4" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2788" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2792" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2796" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2808" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2812" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2816" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2820" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2824" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2828" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2832" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2836" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2840" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2844" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2848" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2852" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2856" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2860" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2864" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2872" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2880" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2888" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2896" Vartype="Float" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2904" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2908" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2912" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2916" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Hexadecimal"/>
+        <Element Offset="2928" Vartype="Double" Bytesize="8" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2944" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2948" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2960" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2964" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2968" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2972" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2976" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2980" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="2984" Vartype="4 Bytes" Bytesize="4" RLECount="7" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3012" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3016" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3020" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3024" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3028" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3032" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3036" Vartype="Byte" Bytesize="1" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3040" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3044" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3048" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3060" Vartype="Float" Bytesize="4" RLECount="10" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3100" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3104" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3108" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3120" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3124" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3128" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3132" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3136" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3140" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3144" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3148" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3152" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3156" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3160" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3164" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3168" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3172" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3176" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3184" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3192" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3200" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3208" Vartype="Float" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3216" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3220" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3224" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3228" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Hexadecimal"/>
+        <Element Offset="3236" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3244" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3248" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="3252" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3256" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3260" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3272" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3276" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3280" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3284" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3288" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3292" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3296" Vartype="4 Bytes" Bytesize="4" RLECount="7" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3324" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3328" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3332" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3336" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3340" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3344" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3348" Vartype="Byte" Bytesize="1" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3352" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3356" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3360" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3372" Vartype="Float" Bytesize="4" RLECount="10" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3412" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3416" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3420" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3432" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3436" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3440" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3444" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3448" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3452" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3456" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3460" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3464" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3468" Vartype="Float" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3480" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3484" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3488" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3496" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3504" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3512" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3520" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3524" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3528" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3532" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3536" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3540" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Hexadecimal"/>
+        <Element Offset="3548" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3556" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3560" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="3564" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3568" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3572" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3584" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3588" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3592" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3596" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3600" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3604" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3608" Vartype="4 Bytes" Bytesize="4" RLECount="7" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3636" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3640" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3644" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3648" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3652" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3656" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3660" Vartype="Byte" Bytesize="1" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3664" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3668" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3672" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3684" Vartype="Float" Bytesize="4" RLECount="9" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3720" Vartype="4 Bytes" Bytesize="4" RLECount="6" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3744" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3748" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3752" Vartype="Float" Bytesize="4" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3768" Vartype="Byte" Bytesize="1" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3769" Vartype="String" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3773" Vartype="Byte" Bytesize="1" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3777" Vartype="String" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3781" Vartype="Byte" Bytesize="1" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3782" Vartype="2 Bytes" Bytesize="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3784" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3788" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3792" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3796" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3800" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3808" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3816" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3824" Vartype="Double" Bytesize="8" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3840" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3844" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3848" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3852" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Hexadecimal"/>
+        <Element Offset="3864" Vartype="Double" Bytesize="8" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3880" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="3884" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3896" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3900" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3904" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3908" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3912" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3916" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3920" Vartype="4 Bytes" Bytesize="4" RLECount="7" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3948" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3952" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3956" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3960" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3964" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3968" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3972" Vartype="Byte" Bytesize="1" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3976" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3980" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3984" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="3996" Vartype="Float" Bytesize="4" RLECount="9" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4032" Vartype="4 Bytes" Bytesize="4" RLECount="6" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4056" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4060" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4064" Vartype="Float" Bytesize="4" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4080" Vartype="Byte" Bytesize="1" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4081" Vartype="String" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4085" Vartype="Byte" Bytesize="1" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4089" Vartype="String" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4093" Vartype="Byte" Bytesize="1" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4094" Vartype="2 Bytes" Bytesize="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4096" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4100" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4104" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4108" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4112" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4120" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4128" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4136" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4144" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4148" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4152" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4156" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4160" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4164" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Hexadecimal"/>
+        <Element Offset="4172" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4180" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4184" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="4188" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4192" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4196" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4208" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4212" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4216" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4220" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4224" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4228" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4232" Vartype="4 Bytes" Bytesize="4" RLECount="7" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4260" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4264" Vartype="Byte" Bytesize="1" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4268" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4272" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4276" Vartype="String" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4280" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4284" Vartype="Byte" Bytesize="1" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4288" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4292" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4296" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4308" Vartype="Float" Bytesize="4" RLECount="9" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4344" Vartype="4 Bytes" Bytesize="4" RLECount="6" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4368" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4372" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4376" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4380" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4384" Vartype="Float" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4392" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4396" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4400" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4404" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4408" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4412" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4416" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4420" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4424" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4432" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4440" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4448" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4456" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4460" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4464" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4468" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4472" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4476" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Hexadecimal"/>
+        <Element Offset="4484" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4492" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4496" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="4500" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4504" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4508" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4520" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4524" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4528" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4532" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4536" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4540" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4544" Vartype="4 Bytes" Bytesize="4" RLECount="7" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4572" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4576" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4580" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4584" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4588" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4592" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4596" Vartype="Byte" Bytesize="1" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4600" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4604" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4608" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4620" Vartype="Float" Bytesize="4" RLECount="9" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4656" Vartype="4 Bytes" Bytesize="4" RLECount="6" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4680" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4684" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4688" Vartype="Float" Bytesize="4" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4704" Vartype="Byte" Bytesize="1" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4705" Vartype="String" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4709" Vartype="Byte" Bytesize="1" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4713" Vartype="String" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4717" Vartype="Byte" Bytesize="1" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4718" Vartype="2 Bytes" Bytesize="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4720" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4724" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4728" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4732" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4736" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4744" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4752" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4760" Vartype="Double" Bytesize="8" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4776" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4780" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4784" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4788" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Hexadecimal"/>
+        <Element Offset="4800" Vartype="Double" Bytesize="8" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4816" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="4820" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4832" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4836" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4840" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4844" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4848" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4852" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4856" Vartype="4 Bytes" Bytesize="4" RLECount="7" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4884" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4888" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4892" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4896" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4900" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4904" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4908" Vartype="Byte" Bytesize="1" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4912" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4916" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4920" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4932" Vartype="Float" Bytesize="4" RLECount="9" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4968" Vartype="4 Bytes" Bytesize="4" RLECount="6" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4992" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="4996" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5000" Vartype="Float" Bytesize="4" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5016" Vartype="Byte" Bytesize="1" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5017" Vartype="String" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5021" Vartype="Byte" Bytesize="1" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5025" Vartype="String" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5029" Vartype="Byte" Bytesize="1" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5030" Vartype="2 Bytes" Bytesize="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5032" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5036" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5040" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5044" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5048" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5056" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5064" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5072" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5080" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5084" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5088" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5092" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5096" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5100" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Hexadecimal"/>
+        <Element Offset="5108" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5116" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5120" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="5124" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5128" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5132" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5144" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5148" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5152" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5156" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5160" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5164" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5168" Vartype="4 Bytes" Bytesize="4" RLECount="7" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5196" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5200" Vartype="String" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5204" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5208" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5212" Vartype="Byte" Bytesize="1" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5216" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5220" Vartype="Byte" Bytesize="1" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5224" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5228" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5232" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5244" Vartype="Float" Bytesize="4" RLECount="9" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5280" Vartype="4 Bytes" Bytesize="4" RLECount="6" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5304" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5308" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5312" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5316" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5320" Vartype="Float" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5328" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5332" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5336" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5340" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5344" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5348" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5352" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5356" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5360" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5368" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5376" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5384" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5392" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5396" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5400" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5404" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5408" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5412" Vartype="4 Bytes" Bytesize="4" RLECount="2" DisplayMethod="Hexadecimal"/>
+        <Element Offset="5420" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5428" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5432" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="5436" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5440" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5444" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5456" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5460" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5464" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5468" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5472" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5476" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5480" Vartype="4 Bytes" Bytesize="4" RLECount="17" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5548" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5552" Vartype="4 Bytes" Bytesize="4" RLECount="11" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5596" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5600" Vartype="4 Bytes" Bytesize="4" RLECount="11" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5644" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5648" Vartype="4 Bytes" Bytesize="4" RLECount="10" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5688" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5692" Vartype="4 Bytes" Bytesize="4" RLECount="12" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5740" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5744" Vartype="4 Bytes" Bytesize="4" RLECount="11" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5788" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5792" Vartype="4 Bytes" Bytesize="4" RLECount="10" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5832" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5836" Vartype="4 Bytes" Bytesize="4" RLECount="11" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5880" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="5884" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5888" Vartype="4 Bytes" Bytesize="4" RLECount="10" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5928" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="5932" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5936" Vartype="4 Bytes" Bytesize="4" RLECount="10" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5976" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5980" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="5984" Vartype="4 Bytes" Bytesize="4" RLECount="11" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="6028" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="6032" Vartype="4 Bytes" Bytesize="4" RLECount="11" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="6076" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="6080" Vartype="4 Bytes" Bytesize="4" RLECount="10" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="6120" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="6124" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="6128" Vartype="4 Bytes" Bytesize="4" RLECount="10" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="6168" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="6172" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="6176" Vartype="4 Bytes" Bytesize="4" RLECount="10" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="6216" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="6220" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="6224" Vartype="4 Bytes" Bytesize="4" RLECount="1460" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12064" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12068" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12072" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12076" Vartype="Float" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12084" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12088" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12092" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12096" Vartype="String" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12100" Vartype="Float" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12112" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12116" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12120" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12124" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12128" Vartype="Byte" Bytesize="1" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12129" Vartype="String" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12133" Vartype="Byte" Bytesize="1" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12135" Vartype="2 Bytes" Bytesize="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12137" Vartype="Byte" Bytesize="1" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12138" Vartype="2 Bytes" Bytesize="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12140" Vartype="Byte" Bytesize="1" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12141" Vartype="String" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12145" Vartype="Byte" Bytesize="1" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12147" Vartype="2 Bytes" Bytesize="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12149" Vartype="Byte" Bytesize="1" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12150" Vartype="2 Bytes" Bytesize="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12152" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12156" Vartype="Float" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12164" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12176" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12180" Vartype="Float" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12188" Vartype="4 Bytes" Bytesize="4" RLECount="5" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12208" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12216" Vartype="4 Bytes" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="12220" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12224" Vartype="Byte" Bytesize="1" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12228" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12232" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12236" Vartype="Float" Bytesize="4" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12252" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12256" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12260" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12268" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12272" Vartype="Float" Bytesize="4" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12288" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12292" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12296" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12304" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12308" Vartype="Float" Bytesize="4" RLECount="2" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12316" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12320" Vartype="4 Bytes" Bytesize="4" RLECount="24" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12416" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12420" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12424" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12428" Vartype="4 Bytes" Bytesize="4" RLECount="49" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12624" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12628" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12632" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12636" Vartype="4 Bytes" Bytesize="4" RLECount="56" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12860" Vartype="4 Bytes" Bytesize="4" Description="slot1" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="12864" Vartype="4 Bytes" Bytesize="4" RLECount="101" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="13268" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="13272" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="13276" Vartype="Float" Bytesize="4" RLECount="5" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="13296" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="13300" Vartype="Float" Bytesize="4" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="13316" Vartype="4 Bytes" Bytesize="4" RLECount="35" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="13456" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="13464" Vartype="4 Bytes" Bytesize="4" RLECount="172" DisplayMethod="Unsigned Integer"/>
+      </Elements>
+    </Structure>
+    <Structure Name="item" AutoFill="0" AutoCreate="1" DefaultHex="0" AutoDestroy="0" DoNotSaveLocal="0" RLECompression="1" AutoCreateStructsize="4096">
+      <Elements>
+        <Element Offset="0" Vartype="4 Bytes" Bytesize="4" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="16" Vartype="4 Bytes" Bytesize="4" Description="type" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="20" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="24" Vartype="Float" Bytesize="4" DisplayMethod="Hexadecimal"/>
+        <Element Offset="28" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="32" Vartype="4 Bytes" Bytesize="4" RLECount="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="48" Vartype="4 Bytes" Bytesize="4" Description="contains" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="52" Vartype="4 Bytes" Bytesize="4" RLECount="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="84" Vartype="4 Bytes" Bytesize="4" Description="pb" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="88" Vartype="Float" Bytesize="4" RLECount="9" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="124" Vartype="Float" Bytesize="4" RLECount="2" DisplayMethod="Hexadecimal"/>
+        <Element Offset="132" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="136" Vartype="4 Bytes" Bytesize="4" RLECount="5" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="156" Vartype="Double" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="164" Vartype="4 Bytes" Bytesize="4" RLECount="3" DisplayMethod="Hexadecimal"/>
+        <Element Offset="176" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="180" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="184" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="188" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="192" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="196" Vartype="4 Bytes" Bytesize="4" RLECount="38" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="348" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="352" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="356" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="360" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="364" Vartype="Pointer" Bytesize="8" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="368" Vartype="Float" Bytesize="4" DisplayMethod="Unsigned Integer"/>
+        <Element Offset="372" Vartype="4 Bytes" Bytesize="4" RLECount="55" DisplayMethod="Unsigned Integer"/>
+      </Elements>
+    </Structure>
+  </Structures>
+</CheatTable>
